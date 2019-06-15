@@ -1,0 +1,31 @@
+[package]
+name = "susy-whisper"
+version = "0.1.0"
+authors = ["Susytech <admin@superstring.ch>", "Paritytech <admin@parity.io>"]
+description = "Whisper Protocol implementation for Susy"
+
+[dependencies]
+bitflags = {version="0.9",registry="susytech"}
+byteorder = {version="1.0.0",registry="susytech"}
+sophon-types = {version="0.4",registry="susytech"}
+sofcore-network = { path = "../util/network" }
+susy-crypto = {version="0.3.0",registry="susytech"}
+sofkey = { path = "../accounts/sofkey" }
+hex = {version="0.2",registry="susytech"}
+log = {version="0.4",registry="susytech"}
+memzero = { path = "../util/memzero" }
+ordered-float = {version="0.5",registry="susytech"}
+parking_lot = {version = "0.7",registry="susytech"}
+rand = {version="0.4",registry="susytech"}
+srlp = { version = "0.3.0", registry="susytech", features = ["sophon"] }
+serde = {version = "1.0",registry="susytech"}
+serde_derive = {version = "1.0",registry="susytech"}
+serde_json = {version = "1.0",registry="susytech"}
+slab = {version="0.3",registry="susytech"}
+smallvec = {version="0.6",registry="susytech"}
+tiny-keccak = {version="1.4",registry="susytech"}
+time-utils = { path = "../util/time-utils" }
+
+susy-jsonrpc-core = {version="10.0.1",registry="susytech"}
+susy-jsonrpc-derive = {version="10.0.2",registry="susytech"}
+susy-jsonrpc-pubsub = {version="10.0.1",registry="susytech"}

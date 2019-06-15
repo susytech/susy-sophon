@@ -1,0 +1,14 @@
+[package]
+authors = ["Susytech <admin@superstring.ch>", "Paritytech <admin@parity.io>"]
+description = "Susy Cli Tool"
+homepage = "http://superstring.io"
+license = "GPL-3.0"
+name = "cli-signer"
+version = "1.4.0"
+
+[dependencies]
+sophon-types = {version="0.4",registry="susytech"}
+futures = {version = "0.1",registry="susytech"}
+rpassword = {version = "1.0",registry="susytech"}
+susy-rpc = { path = "../rpc" }
+susy-rpc-client = { path = "rpc-client" }

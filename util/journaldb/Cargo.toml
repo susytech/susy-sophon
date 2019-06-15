@@ -1,0 +1,24 @@
+[package]
+name = "journaldb"
+version = "0.2.0"
+authors = ["Susytech <admin@superstring.ch>", "Paritytech <admin@parity.io>"]
+description = "A `HashDB` which can manage a short-term journal potentially containing many forks of mutually exclusive actions"
+license = "GPL3"
+
+[dependencies]
+susy-bytes = {version="0.1",registry="susytech"}
+sophon-types = {version="0.4",registry="susytech"}
+hash-db = {version="0.11.0",registry="susytech"}
+heapsize = {version="0.4",registry="susytech"}
+keccak-hasher = { path = "../keccak-hasher" }
+susykv = {version="0.1",registry="susytech"}
+log = {version="0.4",registry="susytech"}
+memory-db = {version="0.11.0",registry="susytech"}
+parking_lot = {version = "0.7",registry="susytech"}
+fastmap = { path = "../../util/fastmap" }
+srlp = { version = "0.3.0", registry="susytech", features = ["sophon"] }
+
+[dev-dependencies]
+env_logger = {version="0.5",registry="susytech"}
+keccak-hash = {version="0.1",registry="susytech"}
+susykv-memorydb = {version="0.1",registry="susytech"}

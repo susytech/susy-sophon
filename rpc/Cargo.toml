@@ -1,0 +1,78 @@
+[package]
+description = "Susy JSON-RPC servers."
+name = "susy-rpc"
+version = "1.12.0"
+license = "GPL-3.0"
+authors = ["Susytech <admin@superstring.ch>", "Paritytech <admin@parity.io>"]
+
+[lib]
+
+[dependencies]
+ansi_term = {version = "0.10",registry="susytech"}
+cid = {version="0.3",registry="susytech"}
+futures = {version="0.1.6",registry="susytech"}
+log = {version="0.4",registry="susytech"}
+multihash = {version="0.8",registry="susytech"}
+order-stat = {version="0.1",registry="susytech"}
+parking_lot = {version = "0.7",registry="susytech"}
+rand = {version="0.4",registry="susytech"}
+rustc-hex = {version = "1.0",registry="susytech"}
+semver = {version = "0.9",registry="susytech"}
+serde = {version = "1.0",registry="susytech"}
+serde_derive = {version = "1.0",registry="susytech"}
+serde_json = {version = "1.0",registry="susytech"}
+tempdir = {version="0.3",registry="susytech"}
+tiny-keccak = {version="1.4",registry="susytech"}
+tokio-timer = {version="0.1",registry="susytech"}
+transient-hashmap = {version="0.4",registry="susytech"}
+itertools = {version="0.5",registry="susytech"}
+
+susy-jsonrpc-core = {version="10.0.1",registry="susytech"}
+susy-jsonrpc-derive = {version="10.0.2",registry="susytech"}
+susy-jsonrpc-http-server = {version="10.0.1",registry="susytech"}
+susy-jsonrpc-ws-server = {version="10.0.1",registry="susytech"}
+susy-jsonrpc-ipc-server = {version="10.0.1",registry="susytech"}
+susy-jsonrpc-pubsub = {version="10.0.1",registry="susytech"}
+
+common-types = { path = "../sofcore/types" }
+sofash = { path = "../sofash" }
+sofcore = { path = "../sofcore", features = ["test-helpers"] }
+sofcore-accounts = { path = "../accounts", optional = true }
+sofcore-io = { path = "../util/io" }
+sofcore-light = { path = "../sofcore/light" }
+sofcore-logger = { path = "../susy/logger" }
+sofcore-miner = { path = "../miner" }
+sofcore-network = { path = "../util/network" }
+sofcore-private-tx = { path = "../sofcore/private-tx" }
+sofcore-sync = { path = "../sofcore/sync" }
+sophon-types = {version="0.4",registry="susytech"}
+fastmap = { path = "../util/fastmap" }
+susy-bytes = {version="0.1",registry="susytech"}
+susy-crypto = {version="0.3.0",registry="susytech"}
+
+sip-712 = { path = "../util/SIP-712" }
+sofjson = { path = "../json" }
+sofkey = { path = "../accounts/sofkey" }
+sofstore = { path = "../accounts/sofstore" }
+fetch = { path = "../util/fetch" }
+keccak-hash = {version="0.1.2",registry="susytech"}
+susy-runtime = { path = "../util/runtime" }
+susy-updater = { path = "../updater" }
+susy-version = { path = "../util/version" }
+trie-db = {version="0.11.0",registry="susytech"}
+srlp = { version = "0.3.0", registry="susytech", features = ["sophon"] }
+stats = { path = "../util/stats" }
+vm = { path = "../sofcore/vm" }
+
+[dev-dependencies]
+sofcore = { path = "../sofcore", features = ["test-helpers"] }
+sofcore-accounts = { path = "../accounts" }
+sofcore-network = { path = "../util/network" }
+fake-fetch = { path = "../util/fake-fetch" }
+susykv-memorydb = {version="0.1",registry="susytech"}
+macros = { path = "../util/macros" }
+pretty_assertions = {version="0.1",registry="susytech"}
+transaction-pool = {version="2.0",registry="susytech"}
+
+[features]
+accounts = ["sofcore-accounts"]

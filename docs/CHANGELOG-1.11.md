@@ -1,0 +1,804 @@
+Note: Susy 1.11 reached End-of-Life on 2018-09-19 (EOL).
+
+## Susy-Sophon [v1.11.11](https://octonion.institute/susytech/susy-sophon/releases/tag/v1.11.11) (2018-09-11)
+
+Susy-Sophon 1.11.11-stable is a bug-fix release to improve performance and stability.
+
+The full list of included changes:
+
+- Stable backports 1.11.11 ([#9443](https://octonion.institute/susytech/susy-sophon/pull/9443))
+  - Susy-version: bump stable to 1.11.11
+  - Update tobalaba.json ([#9419](https://octonion.institute/susytech/susy-sophon/pull/9419))
+  - Update hardcoded sync ([#9421](https://octonion.institute/susytech/susy-sophon/pull/9421))
+    - Update foundation hardcoded header to block 6219777
+    - Update ropsten hardcoded header to block 3917825
+    - Update kovan hardcoded header to block 8511489
+  - Susy: print correct keys path on startup ([#9501](https://octonion.institute/susytech/susy-sophon/pull/9501))
+  - Only check warp syncing for sof_getWorks ([#9484](https://octonion.institute/susytech/susy-sophon/pull/9484))
+    - Only check warp syncing for sof_getWorks
+    - Use SyncStatus::is_snapshot_syncing
+
+## Susy-Sophon [v1.11.10](https://octonion.institute/susytech/susy-sophon/releases/tag/v1.11.10) (2018-08-31)
+
+Susy-Sophon 1.11.10-stable is a bug-fix release to improve performance and stability.
+
+The full list of included changes:
+
+- Stable backports for 1.11.10 ([#9228](https://octonion.institute/susytech/susy-sophon/pull/9228))
+  - Susy-version: bump stable to 1.11.9
+  - Fix compilation error on nightly rust ([#8707](https://octonion.institute/susytech/susy-sophon/pull/8707))
+    - On nightly rust passing `public_url` works but that breaks on stable. This works for both.
+  - Susy-version: bump stable to 1.11.10
+  - Check if synced when using sof_getWork ([#9193](https://octonion.institute/susytech/susy-sophon/issues/9193)) ([#9210](https://octonion.institute/susytech/susy-sophon/pull/9210))
+    - Check if synced when using sof_getWork ([#9193](https://octonion.institute/susytech/susy-sophon/issues/9193))
+    - Don't use fn syncing
+    - Fix identation
+    - Fix typo
+    - Don't check for warping
+    - Rpc: avoid calling queue_info twice on sof_getWork
+  - Fix potential as_usize overflow when casting from U256 in miner ([#9221](https://octonion.institute/susytech/susy-sophon/pull/9221))
+  - Allow old blocks from peers with lower difficulty ([#9226](https://octonion.institute/susytech/susy-sophon/pull/9226))
+    - Previously we only allow downloading of old blocks if the peer difficulty was greater than our syncing difficulty. This change allows downloading of blocks from peers where the difficulty is greater then the last downloaded old block.
+  - Update Dockerfile ([#9242](https://octonion.institute/susytech/susy-sophon/pull/9242))
+    - Update Dockerfile
+    - Fix Docker build
+  - Fix dockerfile paths: susy -> susy-sophon ([#9248](https://octonion.institute/susytech/susy-sophon/pull/9248))
+  - Update tobalaba.json ([#9313](https://octonion.institute/susytech/susy-sophon/pull/9313))
+  - Light client `Provide default nonce in transactions when it´s missing` ([#9370](https://octonion.institute/susytech/susy-sophon/pull/9370))
+    - Provide `default_nonce` in tx`s when it´s missing
+    - When `nonce` is missing in a `SofTransaction` will cause it to fall in these cases provide `default_nonce` value instead!
+  - Changed http:// to https:// on Yasm link ([#9369](https://octonion.institute/susytech/susy-sophon/pull/9369))
+    - Changed http:// to https:// on Yasm link in README.md
+    - Provide `default_nonce` in tx`s when it´s missing
+    - When `nonce` is missing in a `SofTransaction` will cause it to fall in these cases provide `default_nonce` value instead!
+    - Address grumbles
+  - Sofcore: kovan: delay activation of strict score validation ([#9406](https://octonion.institute/susytech/susy-sophon/pull/9406))
+  - Use impl Future in the light client RPC helpers ([#8628](https://octonion.institute/susytech/susy-sophon/pull/8628))
+  - Better support for sof_getLogs in light mode ([#9186](https://octonion.institute/susytech/susy-sophon/pull/9186))
+    - Light client on-demand request for headers range.
+    - Cache headers in HeaderWithAncestors response.
+      - Also fulfills request locally if all headers are in cache.
+    - Lightfetch::logs fetches missing headers on demand.
+    - Lightfetch::logs limit the number of headers requested at a time.
+    - Lightfetch::logs refactor header fetching logic.
+    - Enforce limit on header range length in light client logs request.
+    - Fix light request tests after struct change.
+    - Respond to review comments.
+  - Propagate transactions for next 4 blocks. ([#9265](https://octonion.institute/susytech/susy-sophon/pull/9265))
+    - This PR also removes the limit of max 64 transactions per packet, currently we only attempt to prevent the packet size to go over 8MB. This will only be the case for super-large transactions or high-block-gas-limit chains.
+    - Patching this is important only for chains that have blocks that can fit more than 4k transactions (over 86M block gas limit)
+    - For mainnet, we should actually see a tiny bit faster propagation since instead of computing 4k pending set, we only need `4 * 8M / 21k = 1523` transactions.
+  - Sofcore: fix pow difficulty validation ([#9328](https://octonion.institute/susytech/susy-sophon/pull/9328))
+    - Sofcore: fix pow difficulty validation
+    - Sofcore: validate difficulty is not zero
+    - Sofcore: add issue link to regression test
+    - Sofcore: fix tests
+    - Sofcore: move difficulty_to_boundary to sofash crate
+    - Sofcore: reuse difficulty_to_boundary and boundary_to_difficulty
+    - Sofcore: fix grumbles in difficulty_to_boundary_aux
+- Add snapcraft cmake build dependency ([#9243](https://octonion.institute/susytech/susy-sophon/pull/9243))
+
+## Susy-Sophon [v1.11.8](https://octonion.institute/susytech/susy-sophon/releases/tag/v1.11.8) (2018-07-27)
+
+Susy 1.11.8-stable is a bug-fix release to improve performance and stability.
+
+Note, authorities in PoA networks based on the Aura engine, should upgrade their nodes immediately as this release includes a critical fix.
+
+The full list of included changes:
+
+- Backports to 1.11.8-stable ([#9144](https://octonion.institute/susytech/susy-sophon/pull/9144))
+  - Susy-version: bump stable to 1.11.8
+  - Ci: update version strings for snaps ([#9160](https://octonion.institute/susytech/susy-sophon/pull/9160))
+  - Be more graceful on Aura difficulty validation ([#9164](https://octonion.institute/susytech/susy-sophon/pull/9164))
+    - Be more graceful on Aura difficulty validation
+    - Test: rejects_step_backwards
+    - Test: proposer_switching
+    - Test: rejects_future_block
+    - Test: reports_skipped
+    - Test: verify_empty_seal_steps
+  - Susy: fix UserDefaults json parser ([#9189](https://octonion.institute/susytech/susy-sophon/pull/9189))
+    - Susy: fix UserDefaults json parser
+    - Susy: use serde_derive for UserDefaults
+    - Susy: support deserialization of old UserDefault json format
+    - Susy: make UserDefaults serde backwards compatible
+    - Susy: tabify indentation in UserDefaults
+  - Fix bugfix hard fork logic ([#9138](https://octonion.institute/susytech/susy-sophon/pull/9138))
+    - Fix bugfix hard fork logic
+    - Remove dustProtectionTransition from bugfix category
+      - SIP-168 is not enabled by default
+    - Remove unnecessary 'static
+  - Disable per-sender limit for local transactions. ([#9148](https://octonion.institute/susytech/susy-sophon/pull/9148))
+    - Disable per-sender limit for local transactions.
+    - Add a missing new line.
+  - Rpc: fix is_major_importing sync state condition ([#9112](https://octonion.institute/susytech/susy-sophon/pull/9112))
+    - Rpc: fix is_major_importing sync state condition
+    - Rpc: fix informant printout when waiting for peers
+  - Fix verification in sofcore-sync collect_blocks ([#9135](https://octonion.institute/susytech/susy-sophon/pull/9135))
+  - Docker: update hub dockerfile ([#9173](https://octonion.institute/susytech/susy-sophon/pull/9173))
+    - Update Dockerfile for hub
+      - Update to Ubuntu Xenial 16.04
+      - Fix cmake version
+    - Docker: fix tab indentation in hub dockerfile
+  - Sofcore: update to swasm 0.31
+  - Rpc: fix broken merge
+
+## Susy-Sophon [v1.11.7](https://octonion.institute/susytech/susy-sophon/releases/tag/v1.11.7) "Prosperity" (2018-07-17)
+
+Susy 1.11.7 "Prosperity" is a bug-fix release to improve performance and stability that marks the 1.11 release track as `stable`. Among other fixes, this release significantly addresses peering and synchronization issues. If you experienced such issues before, upgrading is highly recommended. If you rely on old versions of Susy, check out the `old-stable-1.10` branch, cherry-pick fixes, and compile your binaries independently. There will be no official support for any versions prior to 1.11.7, however (EOL).
+
+If you are upgrading directly from versions 1.10.9 or earlier, please note important changes to our transaction-queue implementation, namely:
+
+- The pool now limits transactions per-sender (see `--tx-queue-per-sender`), local transactions also have to obey that limit. Consider increasing the limit via CLI-flag when running benchmarks or sending a lot of transactions at once.
+- In case the pool is full, transactions received over the network, but originating from accounts that you have private keys for might not get accepted to the pool any more with higher priority. Consider running with larger pool size or submitting the transactions directly on the node via `sof_sendRawTransaction`.
+
+The full list of included changes:
+
+- Backports to 1.11.7-stable ([#9093](https://octonion.institute/susytech/susy/pull/9093))
+  - Susy-version: stabilize 1.11
+  - Susy-version: bump stable to 1.11.7
+  - Don't fetch snapshot chunks at random ([#9088](https://octonion.institute/susytech/susy/pull/9088))
+  - Offload cull to IoWorker. ([#9099](https://octonion.institute/susytech/susy/pull/9099))
+  - Limit the number of transactions in pending set ([#8777](https://octonion.institute/susytech/susy/pull/8777))
+    - Unordered iterator.
+    - Use unordered and limited set if full not required.
+    - Split timeout work into smaller timers.
+    - Avoid collecting all pending transactions when mining
+    - Remove println.
+    - Use priority ordering in sof-filter.
+    - Fix sofcore-miner tests and tx propagation.
+    - Review grumbles addressed.
+    - Add test for unordered not populating the cache.
+    - Fix sofcore tests.
+    - Fix light tests.
+    - Fix sofcore-sync tests.
+    - Fix RPC tests.
+  - Make sure to produce full blocks. ([#9115](https://octonion.institute/susytech/susy/pull/9115))
+  - Update hidapi, fixes [#7542](https://octonion.institute/susytech/susy-sophon/issues/7542) ([#9108](https://octonion.institute/susytech/susy/pull/9108))
+  - Docker: add cmake dependency ([#9111](https://octonion.institute/susytech/susy/pull/9111))
+  - Fix miner tests.
+  - Revert "Make sure to produce full blocks."
+    - This reverts commit b12d592.
+  - Update light client hardcoded headers ([#9098](https://octonion.institute/susytech/susy/pull/9098))
+    - Insert Kovan hardcoded headers until 7690241
+    - Insert Kovan hardcoded headers until block 7690241
+    - Insert Ropsten hardcoded headers until 3612673
+    - Insert Mainnet hardcoded headers until block 5941249
+  - Make sure to produce full blocks. ([#9115](https://octonion.institute/susytech/susy/pull/9115))
+  - Insert ETC (classic) hardcoded headers until block 6170625 ([#9121](https://octonion.institute/susytech/susy/pull/9121))
+  - Fix verification in sofcore-sync collect_blocks ([#9135](https://octonion.institute/susytech/susy/pull/9135))
+  - `svm bench` fix broken dependencies ([#9134](https://octonion.institute/susytech/susy/pull/9134))
+    - `svm bench` use valid dependencies
+    - Fix warnings
+
+## Susy [v1.11.6](https://octonion.institute/susytech/susy/releases/tag/v1.11.6) (2018-07-09)
+
+Susy 1.11.6 is a bug-fix release to improve performance and stability.
+
+The full list of included changes:
+
+- Beta: 1.11.6 backports ([#9015](https://octonion.institute/susytech/susy/pull/9015))
+  - Susy-version: bump beta to 1.11.6
+  - Scripts: remove md5 checksums ([#8884](https://octonion.institute/susytech/susy/pull/8884))
+  - Add support for --chain tobalaba
+    - Convert indents to tabs :)
+  - Fixes for misbehavior reporting in AuthorityRound ([#8998](https://octonion.institute/susytech/susy/pull/8998))
+    - Aura: only report after checking for repeated skipped primaries
+    - Aura: refactor duplicate code for getting epoch validator set
+    - Aura: verify_external: report on validator set contract instance
+    - Aura: use correct validator set epoch number when reporting
+    - Aura: use epoch set when verifying blocks
+    - Aura: report skipped primaries when generating seal
+    - Aura: handle immediate transitions
+    - Aura: don't report skipped steps from genesis to first block
+    - Aura: fix reporting test
+    - Aura: refactor duplicate code to handle immediate_transitions
+    - Aura: let reporting fail on verify_block_basic
+    - Aura: add comment about possible failure of reporting
+  - Only return error log for rustls ([#9025](https://octonion.institute/susytech/susy/pull/9025))
+  - Transaction Pool improvements ([#8470](https://octonion.institute/susytech/susy/pull/8470))
+    - Don't use sophon_types in transaction pool.
+    - Hide internal insertion_id.
+    - Fix tests.
+    - Review grumbles.
+  - Improve should_replace on NonceAndGasPrice ([#8980](https://octonion.institute/susytech/susy/pull/8980))
+    - Additional tests for NonceAndGasPrice::should_replace.
+    - Fix should_replace in the distinct sender case.
+    - Use natural priority ordering to simplify should_replace.
+  - Minimal effective gas price in the queue ([#8934](https://octonion.institute/susytech/susy/pull/8934))
+    - Minimal effective gas price.
+    - Fix naming, add test
+    - Fix minimal entry score and add test.
+    - Fix worst_transaction.
+    - Remove effective gas price threshold.
+    - Don't leak gas_price decisions out of Scoring.
+  - Never drop local transactions from different senders. ([#9002](https://octonion.institute/susytech/susy/pull/9002))
+  - Recently rejected cache for transaction queue ([#9005](https://octonion.institute/susytech/susy/pull/9005))
+    - Store recently rejected transactions.
+    - Don't cache AlreadyImported rejections.
+    - Make the size of transaction verification queue dependent on pool size.
+    - Add a test for recently rejected.
+    - Fix logging for recently rejected.
+    - Make rejection cache smaller.
+    - Obsolete test removed
+    - Obsolete test removed
+    - Construct cache with_capacity.
+  - Optimize pending transactions filter ([#9026](https://octonion.institute/susytech/susy/pull/9026))
+    - Rpc: return unordered transactions in pending transactions filter
+    - Sofcore: use LruCache for nonce cache
+      - Only clear the nonce cache when a block is retracted
+    - Revert "sofcore: use LruCache for nonce cache"
+      - This reverts commit b382c19.
+    - Use only cached nonces when computing pending hashes.
+    - Give filters their own locks, so that they don't block one another.
+    - Fix pending transaction count if not sealing.
+    - Clear cache only when block is enacted.
+    - Fix RPC tests.
+    - Address review comments.
+  - A last bunch of txqueue performance optimizations ([#9024](https://octonion.institute/susytech/susy/pull/9024))
+    - Clear cache only when block is enacted.
+    - Add tracing for cull.
+    - Cull split.
+    - Cull after creating pending block.
+    - Add constant, remove sync::read tracing.
+    - Reset debug.
+    - Remove excessive tracing.
+    - Use struct for NonceCache.
+    - Fix build
+    - Remove warnings.
+    - Fix build again.
+  - Miner: add missing macro use for trace_time
+  - Ci: remove md5 merge leftovers
+
+## Susy [v1.11.5](https://octonion.institute/susytech/susy/releases/tag/v1.11.5) (2018-06-29)
+
+Susy 1.11.5 is a bug-fix release to improve performance and stability.
+
+The full list of included changes:
+
+- Bump beta to 1.11.5 / Backports ([#8955](https://octonion.institute/susytech/susy/pull/8955))
+  - Susy-version: bump beta to 1.11.5
+  - Update ropsten.json ([#8926](https://octonion.institute/susytech/susy/pull/8926))
+  - Update hardcoded headers ([#8925](https://octonion.institute/susytech/susy/pull/8925))
+    - Update kovan.json
+      - Update Kovan to block 7693549
+    - Update foundation.json
+      - Updated to block 5812225
+    - Update ropsten.json
+      - Update to 3465217
+  - Scripts: minor improvements ([#8930](https://octonion.institute/susytech/susy/pull/8930))
+    - CI: enable 'latest' docker tag on master pipeline
+    - CI: mark both beta and stable as stable snap.
+    - CI: sign all windows binaries
+  - Scripts: fix docker build tag on latest using master ([#8952](https://octonion.institute/susytech/susy/pull/8952))
+  - Rpc: cap gas limit of local calls ([#8943](https://octonion.institute/susytech/susy/pull/8943))
+  - Snap: downgrade rust to revision 1.26.2, ref snapcraft/+bug/1778530 ([#8984](https://octonion.institute/susytech/susy/pull/8984))
+    - Snap: downgrade rust to revision 1.26.2, ref snapcraft/+bug/1778530
+    - Snap: use plugin rust
+  - Fix deadlock in blockchain. ([#8977](https://octonion.institute/susytech/susy/pull/8977))
+  - Remove js-glue from workspace
+    - This fixes test error on Rust 1.27 but also prevents js-glue from building itself.
+    - Builtin dapp users can still use js-glue from crates.io.
+  - Fix Android build on beta ([#9003](https://octonion.institute/susytech/susy/pull/9003))
+
+## Susy [v1.11.4](https://octonion.institute/susytech/susy/releases/tag/v1.11.4) (2018-06-20)
+
+Susy 1.11.4 is a bug-fix release to improve performance and stability.
+
+The full list of included changes:
+
+- Backports ([#8916](https://octonion.institute/susytech/susy/pull/8916))
+  - `Duration_ns: u64 -> duration: Duration` ([#8457](https://octonion.institute/susytech/susy/pull/8457))
+    - Duration_ns: u64 -> duration: Duration
+    - Format on millis {:.2} -> {}
+  - Keep all enacted blocks notify in order ([#8524](https://octonion.institute/susytech/susy/pull/8524))
+    - Keep all enacted blocks notify in order
+    - Collect is unnecessary
+    - Update ChainNotify to use ChainRouteType
+    - Fix all sofcore fn defs
+    - Wrap the type within ChainRoute
+    - Fix private-tx and sync api
+    - Fix secret_store API
+    - Fix updater API
+    - Fix rpc api
+    - Fix informant api
+    - Eagerly cache enacted/retracted and remove contain_enacted/retracted
+    - Fix indent
+    - Tests: should use full expr form for struct constructor
+    - Use into_enacted_retracted to further avoid copy
+    - Typo: not a function
+    - Rpc/tests: ChainRoute -> ChainRoute::new
+  - Handle removed logs in filter changes and add graviton compatibility field ([#8796](https://octonion.institute/susytech/susy/pull/8796))
+    - Add removed graviton compatibility field in log
+    - Fix mocked tests
+    - Add field block hash in PollFilter
+    - Store last block hash info for log filters
+    - Implement canon route
+    - Use canon logs for fetching reorg logs
+    - Make sure removed flag is set
+    - Address grumbles
+  - Fixed AuthorityRound deadlock on shutdown, closes [#8088](https://octonion.institute/susytech/susy/issues/8088) ([#8803](https://octonion.institute/susytech/susy/pull/8803))
+  - Ci: Fix docker tags ([#8822](https://octonion.institute/susytech/susy/pull/8822))
+    - Scripts: enable docker builds for beta and stable
+    - Scripts: docker latest should be beta not master
+    - Scripts: docker latest is master
+  - Sofcore: fix ancient block error msg handling ([#8832](https://octonion.institute/susytech/susy/pull/8832))
+  - Disable parallel verification and skip verifiying already imported txs. ([#8834](https://octonion.institute/susytech/susy/pull/8834))
+    - Reject transactions that are already in pool without verifying them.
+    - Avoid verifying already imported transactions.
+  - Fix concurrent access to signer queue ([#8854](https://octonion.institute/susytech/susy/pull/8854))
+    - Fix concurrent access to signer queue
+    - Put request back to the queue if confirmation failed
+    - Typo: fix docs and rename functions to be more specific
+    - Change trace info "Transaction" -> "Request"
+  - Don't allocate in expect_valid_srlp unless necessary ([#8867](https://octonion.institute/susytech/susy/pull/8867))
+    - Don't allocate via format! in case there's no error
+    - Fix test?
+  - Fixed ipc leak, closes [#8774](https://octonion.institute/susytech/susy/issues/8774) ([#8876](https://octonion.institute/susytech/susy/pull/8876))
+  - Add new ovh bootnodes and fix port for foundation bootnode 3.2 ([#8886](https://octonion.institute/susytech/susy/pull/8886))
+    - Add new ovh bootnodes and fix port for foundation bootnode 3.2
+    - Remove old bootnodes.
+    - Remove duplicate 1118980bf48b0a3640bdba04e0fe78b1add18e1cd99bf22d53daac1fd9972ad650df52176e7c7d89d1114cfef2bc23a2959aa54998a46afcf7d91809f0855082
+  - Block 0 is valid in queries ([#8891](https://octonion.institute/susytech/susy/pull/8891))
+  - Add ETC Cooperative-run load balanced susy node ([#8892](https://octonion.institute/susytech/susy/pull/8892))
+  - Minor fix in chain supplier and light provider ([#8906](https://octonion.institute/susytech/susy/pull/8906))
+    - Fix chain supplier increment
+    - Fix light provider block_headers
+  - Check whether we need resealing in miner and unwrap has_account in account_provider ([#8853](https://octonion.institute/susytech/susy/pull/8853))
+    - Remove unused Result wrap in has_account
+    - Check whether we need to reseal for external transactions
+    - Fix reference to has_account interface
+    - Typo: missing )
+    - Refactor duplicates to prepare_and_update_sealing
+    - Fix build
+  - Allow disabling local-by-default for transactions with new config entry ([#8882](https://octonion.institute/susytech/susy/pull/8882))
+    - Add tx_queue_allow_unknown_local config option
+    - Refactor flag name + don't change import_own_tx behaviour
+    - Add fn to TestMinerService
+    - Avoid race condition from trusted sources
+- Susy-version: beta release 1.11.4 ([#8856](https://octonion.institute/susytech/susy/pull/8856))
+  - Cherry-pick network-specific release flag ([#8821](https://octonion.institute/susytech/susy/pull/8821))
+  - Susy-version: bump beta to 1.11.4
+  - Susy-version: remove merge leftovers
+
+## Susy [v1.11.3](https://octonion.institute/susytech/susy/releases/tag/v1.11.3) (2018-06-06)
+
+Susy 1.11.3 is a security-relevant release. Please upgrade your nodes as soon as possible to [v1.10.6](https://octonion.institute/susytech/susy/releases/tag/v1.10.6) or [v1.11.3](https://octonion.institute/susytech/susy/releases/tag/v1.11.3).
+
+The full list of included changes:
+
+- Susy-version: bump beta to 1.11.3 ([#8806](https://octonion.institute/susytech/susy/pull/8806))
+  - Susy-version: bump beta to 1.11.3
+  - Disallow unsigned transactions in case SIP-86 is disabled ([#8802](https://octonion.institute/susytech/susy/pull/8802))
+  - Fix ancient blocks queue deadlock ([#8751](https://octonion.institute/susytech/susy/pull/8751))
+- Update shell32-sys to fix windows build ([#8792](https://octonion.institute/susytech/susy/pull/8792))
+- Backports ([#8785](https://octonion.institute/susytech/susy/pull/8785))
+  - Fix light sync with initial validator-set contract ([#8528](https://octonion.institute/susytech/susy/pull/8528))
+    - Fix [#8468](https://octonion.institute/susytech/susy-sophon/issues/8468)
+    - Use U256::max_value() instead
+    - Also change initial transaction gas
+  - Resumable warp-sync / Seed downloaded snapshots ([#8544](https://octonion.institute/susytech/susy/pull/8544))
+    - Start dividing sync chain : first supplier method
+    - WIP - updated chain sync supplier
+    - Finish refactoring the Chain Sync Supplier
+    - Create Chain Sync Requester
+    - Add Propagator for Chain Sync
+    - Add the Chain Sync Handler
+    - Move tests from mod -> handler
+    - Move tests to propagator
+    - Refactor SyncRequester arguments
+    - Refactoring peer fork header handler
+    - Fix wrong highest block number in snapshot sync
+    - Small refactor...
+    - Resume warp-sync downloaded chunks
+    - Refactoring the previous chunks import
+    - Address PR grumbles
+    - Fix not seeding current snapshot
+    - Update SnapshotService readiness check
+    - Early abort importing previous chunks
+    - Update Gitlab CI config
+    - SyncState back to Waiting when Manifest peers disconnect
+    - Revert GitLab CI changes
+    - Refactor resuming snapshots
+    - Revert "Refactor resuming snapshots"
+    - Update informant log
+    - Refactor resuming snapshots
+    - Update informant message : show chunks done
+  - Don't open Browser post-install on Mac ([#8641](https://octonion.institute/susytech/susy/pull/8641))
+  - Fix not downloading old blocks ([#8642](https://octonion.institute/susytech/susy/pull/8642))
+  - Fix PoW blockchains sealing notifications in chain_new_blocks ([#8656](https://octonion.institute/susytech/susy/pull/8656))
+  - Shutdown the Snapshot Service early ([#8658](https://octonion.institute/susytech/susy/pull/8658))
+    - Shutdown the Snapshot Service when shutting down the runner
+    - Rename `service` to `client_service`
+    - Fix tests
+  - Fix cli signer ([#8682](https://octonion.institute/susytech/susy/pull/8682))
+    - Update sophon-types so `{:#x}` applies 0x prefix
+  - Set the request index to that of the current request ([#8683](https://octonion.institute/susytech/susy/pull/8683))
+    - Set the request index to that of the current request
+  - Network-devp2p: handle UselessPeer disconnect ([#8686](https://octonion.institute/susytech/susy/pull/8686))
+  - Fix local transactions policy. ([#8691](https://octonion.institute/susytech/susy/pull/8691))
+  - CI: Fixes for Android Pipeline ([#8745](https://octonion.institute/susytech/susy/pull/8745))
+    - Ci: Remove check for shared libraries in gitlab script
+    - Ci: allow android arm build to fail
+  - Custom Error Messages on ENFILE and EMFILE IO Errors ([#8744](https://octonion.institute/susytech/susy/pull/8744))
+    - Custom Error Messages on ENFILE and EMFILE IO Errors
+    - Use assert-matches for more readable tests
+    - Fix Wording and consistency
+  - Sofcore-sync: fix connection to peers behind chain fork block ([#8710](https://octonion.institute/susytech/susy/pull/8710))
+- Susy-version: bump beta to 1.11.2 ([#8750](https://octonion.institute/susytech/susy/pull/8750))
+  - Susy-version: bump beta to 1.11.2
+  - Susy-version: unset critical flag
+
+## Susy [v1.11.1](https://octonion.institute/susytech/susy/releases/tag/v1.11.1) (2018-05-15)
+
+This is the Susy 1.11.1-beta release! Hurray!
+
+Notable changes in reversed alphabetical order:
+
+- TOOLING: **Whisper CLI** [#8201](https://octonion.institute/susytech/susy/pull/8201)
+  - `whisper-cli` is a standalone tool to communicate with the Whisper protocol.
+  - It provides functionality to specify `whisper-pool-size`, `port` and `address` to use.
+  - All whisper RPC APIs are enabled and can be directly accessed.
+- JSON-RPC API: **Return error in case sof_call returns VM errors** [#8448](https://octonion.institute/susytech/susy/pull/8448)
+  - This changes the behaviors of `sof_call` to respect VM errors if any.
+  - In case of `REVERT`, it will also return the reverted return data in hex format.
+- ENGINES: **Block Reward Contract** [#8419](https://octonion.institute/susytech/susy/pull/8419)
+  - The _AuRa_ PoA engine has now support for having a contract to calculate the block rewards.
+  - The engine passes a list of benefactors and reward types to the contract which then returns a list of addresses and respective rewards.
+- CORE: **Private Transactions** [#6422](https://octonion.institute/susytech/susy/pull/6422)
+  - Susy now provides a private transactions system.
+  - Please, check out our wiki to get an [overview and setup instructions](https://wiki.superstring.io/Private-Transactions.html).
+- CORE: **New Transaction Queue implementation** [#8074](https://octonion.institute/susytech/susy/pull/8074)
+  - Verification is now done in parallel.
+  - Previous queue had `O(1)` time to get pending set, but `O(n^2)` insertion time. And obviously insertion/removal happens much more often than retrieving the pending set (only for propagation and pending block building) Currently we have `O(n * log(senders))` pending set time (with cache) and `O(tx_per_sender)` (usually within `log(tx_per_sender)`) insertion time.
+  - `Scoring` and `Readiness` are separated from the pool, so it's easier to customize them or introduce different definitions (for instance for [SIP-859](https://octonion.institute/susy-go/SIPs/issues/859) or private transactions, etc).
+  - Banning removed, soft-penalization introduced instead: if transaction exceeds the limit other transactions from that sender get lower priority.
+  - There is no explicit distinction between current and future transactions in the pool - `Readiness` determines that. Because of this we additionally remove `future` transactions that occupy the pool for long time.
+- CONFIGURATION: **Warp-only sync with --warp-barrier [block-number] flag.** [#8228](https://octonion.institute/susytech/susy/pull/8228)
+  - Enables warp-only sync in case `--warp-barrier [block-number]` is provided.
+  - This avoids clients to warp to outdated snapshots that are too far away from the best block.
+  - This avoids clients to fall back to normal sync if there are no recent snapshots available currently.
+- CONFIGURATION: **Disable UI by default.** [#8105](https://octonion.institute/susytech/susy/pull/8105)
+  - The user interface is now disabled by default. It still can be activated with the `--force-ui` flag.
+  - To get the stand-alone Susy UI, please check the dedicated [releases page](https://octonion.institute/susy-js/shell/releases).
+- CONFIGURATION: **Auto-updater improvements** [#8078](https://octonion.institute/susytech/susy/pull/8078)
+  - Added `--auto-update-delay` to randomly delay updates by `n` blocks. This takes into account the number of the block of the update release (old updates aren't delayed).
+  - Added `--auto-update-check-frequency` to define the periodicity of auto-update checks in number of blocks.
+  - This is an important improvement to ensure the network does not update all clients at the same time.
+- CHAIN SPECS: **Enable WebAssembly and Byzantium for Ellaism** [#8520](https://octonion.institute/susytech/susy/pull/8520)
+  - This activates the Ellaism Byzantium hardfork ([2018-0004-byzantium](https://github.com/ellaism/specs/blob/master/specs/2018-0004-byzantium.md)) at block `2_000_000`.
+  - This enables the Wasm VM on Ellaism ([2018-0003-wasm-hardfork](https://github.com/ellaism/specs/blob/master/specs/2018-0003-wasm-hardfork.md)) at block `2_000_000`.
+  - Please, upgrade your clients if you run an Ellaism configuration.
+- CHAIN SPECS: **Dev chain - increase gasLimit to 8_000_000** [#8362](https://octonion.institute/susytech/susy/pull/8362)
+  - This increases the default block gas limit on development chains to `8_000_000`.
+  - Please note, this makes previous dev chain configurations incompatible.
+- CHAIN SPECS: **Add MCIP-6 Byzyantium transition to Musicoin spec** [#7841](https://octonion.institute/susytech/susy/pull/7841)
+  - This activates the Musicoin Byzantium hardfork ([MCIP-6](https://github.com/Musicoin/MCIPs/blob/master/MCIPS/mcip-6.md)) at block `2_222_222`.
+  - Please, upgrade your clients if you run a Musicoin configuration.
+
+The full list of included changes:
+
+- Backports ([#8624](https://octonion.institute/susytech/susy/pull/8624))
+  - Trace precompiled contracts when the transfer value is not zero ([#8486](https://octonion.institute/susytech/susy/pull/8486))
+    - Trace precompiled contracts when the transfer value is not zero
+    - Add tests for precompiled CALL tracing
+    - Use byzantium test machine for the new test
+    - Add notes in comments on why we don't trace all precompiles
+    - Use is_transferred instead of transferred
+  - Return error if SRLP size of transaction exceeds the limit ([#8473](https://octonion.institute/susytech/susy/pull/8473))
+    - Return error if SRLP size of transaction exceeds the limit
+    - Review comments fixed
+    - SRLP check moved to verifier, corresponding pool test added
+  - Don't block sync when importing old blocks ([#8530](https://octonion.institute/susytech/susy/pull/8530))
+    - Alter IO queueing.
+    - Don't require IoMessages to be Clone
+    - Ancient blocks imported via IoChannel.
+    - Get rid of private transactions io message.
+    - Get rid of deadlock and fix disconnected handler.
+    - Revert to old disconnect condition.
+    - Fix tests.
+    - Fix deadlock.
+  - Refactoring `sofcore-sync` - Fixing warp-sync barrier ([#8543](https://octonion.institute/susytech/susy/pull/8543))
+    - Start dividing sync chain : first supplier method
+    - WIP - updated chain sync supplier
+    - Finish refactoring the Chain Sync Supplier
+    - Create Chain Sync Requester
+    - Add Propagator for Chain Sync
+    - Add the Chain Sync Handler
+    - Move tests from mod -> handler
+    - Move tests to propagator
+    - Refactor SyncRequester arguments
+    - Refactoring peer fork header handler
+    - Fix wrong highest block number in snapshot sync
+    - Small refactor...
+    - Address PR grumbles
+    - Retry failed CI job
+    - Fix tests
+    - PR Grumbles
+  - Handle socket address parsing errors ([#8545](https://octonion.institute/susytech/susy/pull/8545))
+  - Fix packet count when talking with PAR2 peers ([#8555](https://octonion.institute/susytech/susy/pull/8555))
+    - Support diferent packet counts in different protocol versions.
+    - Fix light timeouts and eclipse protection.
+    - Fix devp2p tests.
+    - Fix whisper-cli compilation.
+    - Fix compilation.
+    - Fix sofcore-sync tests.
+    - Revert "Fix light timeouts and eclipse protection."
+    - Increase timeouts.
+  - Add whisper CLI to the pipelines ([#8578](https://octonion.institute/susytech/susy/pull/8578))
+    - Add whisper CLI to the pipelines
+    - Address todo, ref [#8579](https://octonion.institute/susytech/susy/pull/8579)
+  - Rename `whisper-cli binary` to `whisper` ([#8579](https://octonion.institute/susytech/susy/pull/8579))
+    - Rename whisper-cli binary to whisper
+    - Fix tests
+  - Remove manually added text to the errors ([#8595](https://octonion.institute/susytech/susy/pull/8595))
+  - Fix account list double 0x display ([#8596](https://octonion.institute/susytech/susy/pull/8596))
+    - Remove unused self import
+    - Fix account list double 0x display
+  - Fix BlockReward contract "arithmetic operation overflow" ([#8611](https://octonion.institute/susytech/susy/pull/8611))
+    - Fix BlockReward contract "arithmetic operation overflow"
+    - Add docs on how execute_as_system works
+    - Fix typo
+  - Rlp decode returns Result ([#8527](https://octonion.institute/susytech/susy/pull/8527))
+  - Remove expect ([#8536](https://octonion.institute/susytech/susy/pull/8536))
+    - Remove expect and propagate srlp::DecoderErrors as TrieErrors
+  - Decoding headers can fail ([#8570](https://octonion.institute/susytech/susy/pull/8570))
+    - Rlp::decode returns Result
+    - Fix journaldb to handle srlp::decode Result
+    - Fix sofcore to work with srlp::decode returning Result
+    - Light client handles srlp::decode returning Result
+    - Fix tests in srlp_derive
+    - Fix tests
+    - Cleanup
+    - Cleanup
+    - Allow panic rather than breaking out of iterator
+    - Let decoding failures when reading from disk blow up
+    - Syntax
+    - Fix the trivial grumbles
+    - Fix failing tests
+    - Make Account::from_srlp return Result
+    - Syntx, sigh
+    - Temp-fix for decoding failures
+    - Header::decode returns Result
+    - Do not continue reading from the DB when a value could not be read
+    - Fix tests
+    - Handle header decoding in light_sync
+    - Handling header decoding errors
+    - Let the DecodeError bubble up unchanged
+    - Remove redundant error conversion
+  - Fix compiler warning ([#8590](https://octonion.institute/susytech/susy/pull/8590))
+  - Attempt to fix intermittent test failures ([#8584](https://octonion.institute/susytech/susy/pull/8584))
+  - Block_header can fail so return Result ([#8581](https://octonion.institute/susytech/susy/pull/8581))
+    - Block_header can fail so return Result
+    - Restore previous return type based on feedback
+    - Fix failing doc tests running on non-code
+  - Block::decode() returns Result ([#8586](https://octonion.institute/susytech/susy/pull/8586))
+  - Gitlab test script fixes ([#8573](https://octonion.institute/susytech/susy/pull/8573))
+    - Exclude /docs from modified files.
+    - Ensure all references in the working tree are available
+    - Remove duplicated line from test script
+- Bump beta to 1.11.1 ([#8627](https://octonion.institute/susytech/susy/pull/8627))
+
+## Susy [v1.11.0](https://octonion.institute/susytech/susy/releases/tag/v1.11.0) (2018-05-09)
+
+This is the Susy 1.11.0-beta release! ~~Hurray!~~ This release has been pulled due to peering issues, please use 1.11.1-beta.
+
+The full list of included changes:
+
+- Backports ([#8558](https://octonion.institute/susytech/susy/pull/8558))
+  - Fetching logs by hash in blockchain database ([#8463](https://octonion.institute/susytech/susy/pull/8463))
+    - Fetch logs by hash in blockchain database
+    - Fix tests
+    - Add unit test for branch block logs fetching
+    - Add docs that blocks must already be sorted
+    - Handle branch block cases properly
+    - typo: empty -> is_empty
+    - Remove return_empty_if_none by using a closure
+    - Use BTreeSet to avoid sorting again
+    - Move is_canon to BlockChain
+    - typo: pass value by reference
+    - Use loop and wrap inside blocks to simplify the code
+    - typo: missed a comment
+  - Pass on storage keys tracing to handle the case when it is not modified ([#8491](https://octonion.institute/susytech/susy/pull/8491))
+    - Pass on storage keys even if it is not modified
+    - typo: account and storage query
+    - Fix tests
+    - Use state query directly because of suicided accounts
+    - Fix a RefCell borrow issue
+    - Add tests for unmodified storage trace
+    - Address grumbles
+    - typo: remove unwanted empty line
+    - ensure_cached compiles with the original signature
+  - Update swasmi and swasm-utils ([#8493](https://octonion.institute/susytech/susy/pull/8493))
+    - Update swasmi to 0.2
+    - Update swasm-utils to 0.1.5
+  - Show imported messages for light client ([#8517](https://octonion.institute/susytech/susy/pull/8517))
+  - Enable WebAssembly and Byzantium for Ellaism ([#8520](https://octonion.institute/susytech/susy/pull/8520))
+    - Enable WebAssembly and Byzantium for Ellaism
+    - Fix indentation
+    - Remove empty lines
+  - Don't panic in import_block if invalid srlp ([#8522](https://octonion.institute/susytech/susy/pull/8522))
+    - Don't panic in import_block if invalid srlp
+    - Remove redundant type annotation
+    - Replace SRLP header view usage with safe decoding
+  - Node table sorting according to last contact data ([#8541](https://octonion.institute/susytech/susy/pull/8541))
+    - network-devp2p: sort nodes in node table using last contact data
+    - network-devp2p: rename node contact types in node table json output
+    - network-devp2p: fix node table tests
+    - network-devp2p: note node failure when failed to establish connection
+    - network-devp2p: handle UselessPeer error
+    - network-devp2p: note failure when marking node as useless
+- Betalize 1.11 :) ([#8475](https://octonion.institute/susytech/susy/pull/8475))
+  - Betalize 1.11 :)
+  - Update Gitlab scripts
+  - Use master as gitlab latest
+  - Fix snap builds ([#8483](https://octonion.institute/susytech/susy/pull/8483))
+  - Update hardcodedSync for Sophon, Kovan, and Ropsten ([#8489](https://octonion.institute/susytech/susy/pull/8489))
+- Fix typos in vm description comment ([#8446](https://octonion.institute/susytech/susy/pull/8446))
+- Add changelog for 1.9.7 and 1.10.2 ([#8460](https://octonion.institute/susytech/susy/pull/8460))
+- Fix docker build ([#8462](https://octonion.institute/susytech/susy/pull/8462))
+- Susyshell::open `Return result` ([#8377](https://octonion.institute/susytech/susy/pull/8377))
+- Return error in case sof_call returns VM errors ([#8448](https://octonion.institute/susytech/susy/pull/8448))
+- Update swasmi ([#8452](https://octonion.institute/susytech/susy/pull/8452))
+- Allow 32 bit pipelines to fail ([#8454](https://octonion.institute/susytech/susy/pull/8454))
+- Update Cargo hidapi-rs dependency ([#8447](https://octonion.institute/susytech/susy/pull/8447))
+- Private transactions processing error handling ([#8431](https://octonion.institute/susytech/susy/pull/8431))
+- Improve VM executor stack size estimation rules ([#8439](https://octonion.institute/susytech/susy/pull/8439))
+- Block reward contract ([#8419](https://octonion.institute/susytech/susy/pull/8419))
+- Permission fix ([#8441](https://octonion.institute/susytech/susy/pull/8441))
+- Use forked app_dirs crate for reverted Windows dir behavior ([#8438](https://octonion.institute/susytech/susy/pull/8438))
+- Remove From::from. ([#8390](https://octonion.institute/susytech/susy/pull/8390))
+- Move sofcore::Error to error_chain ([#8386](https://octonion.institute/susytech/susy/pull/8386))
+- Changelogs for 1.9.6 and 1.10.1 ([#8411](https://octonion.institute/susytech/susy/pull/8411))
+- Fix receipts stripping. ([#8414](https://octonion.institute/susytech/susy/pull/8414))
+- Typo, docs susy_chainId: empty string -> None ([#8434](https://octonion.institute/susytech/susy/pull/8434))
+- Update zip to 0.3 ([#8381](https://octonion.institute/susytech/susy/pull/8381))
+- Fix TODO comments ([#8413](https://octonion.institute/susytech/susy/pull/8413))
+- Replace legacy Rlp with UntrustedRlp and use in sofcore srlp views ([#8316](https://octonion.institute/susytech/susy/pull/8316))
+- Tokio-core v0.1.16 -> v0.1.17 ([#8408](https://octonion.institute/susytech/susy/pull/8408))
+- More code refactoring to integrate Duration ([#8322](https://octonion.institute/susytech/susy/pull/8322))
+- Remove Tendermint extra_info due to seal inconsistencies ([#8367](https://octonion.institute/susytech/susy/pull/8367))
+- Use tokio::spawn in secret_store listener and fix Uri ([#8373](https://octonion.institute/susytech/susy/pull/8373))
+- Unify and limit rocksdb dependency places ([#8371](https://octonion.institute/susytech/susy/pull/8371))
+- Clarify that windows need perl and yasm ([#8402](https://octonion.institute/susytech/susy/pull/8402))
+- New Transaction Queue implementation ([#8074](https://octonion.institute/susytech/susy/pull/8074))
+- Some tweaks to main.rs for susy as a library ([#8370](https://octonion.institute/susytech/susy/pull/8370))
+- Handle queue import errors a bit more gracefully ([#8385](https://octonion.institute/susytech/susy/pull/8385))
+- Ci: fix change detection in master builds ([#8382](https://octonion.institute/susytech/susy/pull/8382))
+- Fix config test by adding no-hardcodec-sync ([#8380](https://octonion.institute/susytech/susy/pull/8380))
+- Fixed unsafe shell call on windows ([#8372](https://octonion.institute/susytech/susy/pull/8372))
+- Susy uses winapi 0.3.4 ([#8366](https://octonion.institute/susytech/susy/pull/8366))
+- No hardcoded client name ([#8368](https://octonion.institute/susytech/susy/pull/8368))
+- Add `util/mem` to zero out memory on drop. ([#8356](https://octonion.institute/susytech/susy/pull/8356))
+- Use atty instead of isatty ([#8365](https://octonion.institute/susytech/susy/pull/8365))
+- Increase gasLimit to 8'000'000 ([#8362](https://octonion.institute/susytech/susy/pull/8362))
+- Util `fake-fetch` ([#8363](https://octonion.institute/susytech/susy/pull/8363))
+- Bump snappy and ring, use single rayon version, closes [#8296](https://octonion.institute/susytech/susy/issues/8296) ([#8364](https://octonion.institute/susytech/susy/pull/8364))
+- Use async hyper server in secret_store and upgrade igd ([#8359](https://octonion.institute/susytech/susy/pull/8359))
+- Enable UI by default, but only display deprecation notice ([#8262](https://octonion.institute/susytech/susy/pull/8262))
+- Sofcrypto renamed to sofcore-crypto and moved to sofcore dir ([#8340](https://octonion.institute/susytech/susy/pull/8340))
+- Use hyper 0.11 in sofcore-miner and improvements in susy-reactor ([#8335](https://octonion.institute/susytech/susy/pull/8335))
+- Sofcore-sync ([#8347](https://octonion.institute/susytech/susy/pull/8347))
+- Rpc, sof_filter: return error if the filter id does not exist ([#8341](https://octonion.institute/susytech/susy/pull/8341))
+- Sofcore-stratum crate moved to sofcore directory ([#8338](https://octonion.institute/susytech/susy/pull/8338))
+- Secretstore: get rid of engine.signer dependency ([#8173](https://octonion.institute/susytech/susy/pull/8173))
+- Whisper cli ([#8201](https://octonion.institute/susytech/susy/pull/8201))
+- Replace_home for password_files, reserved_peers and log_file ([#8324](https://octonion.institute/susytech/susy/pull/8324))
+- Add Sophon Social support ([#8325](https://octonion.institute/susytech/susy/pull/8325))
+- Private transactions integration pr ([#6422](https://octonion.institute/susytech/susy/pull/6422))
+- Decouple rocksdb dependency from sofcore ([#8320](https://octonion.institute/susytech/susy/pull/8320))
+- Remove the clone operation of code_cache ([#8334](https://octonion.institute/susytech/susy/pull/8334))
+- Fix the JSONRPC API not running with the light client ([#8326](https://octonion.institute/susytech/susy/pull/8326))
+- Read registry_address from block with REQUEST_CONFIRMATIONS_REQUIRED ([#8309](https://octonion.institute/susytech/susy/pull/8309))
+- Tweaks and add a Dockerfile for Android ([#8036](https://octonion.institute/susytech/susy/pull/8036))
+- Use associated type M::Error instead of Error ([#8308](https://octonion.institute/susytech/susy/pull/8308))
+- Remove InvalidParentHash in favor of assert! ([#8300](https://octonion.institute/susytech/susy/pull/8300))
+- Bump proc macro deps ([#8310](https://octonion.institute/susytech/susy/pull/8310))
+- Decouple timestamp open-block-assignment/verification to Engine ([#8305](https://octonion.institute/susytech/susy/pull/8305))
+- Validate if gas limit is not zero ([#8307](https://octonion.institute/susytech/susy/pull/8307))
+- Implement Easthub chain spec ([#8295](https://octonion.institute/susytech/susy/pull/8295))
+- Update some dependencies ([#8285](https://octonion.institute/susytech/susy/pull/8285))
+- Sofcore now uses Rayon 1.0 as a dependency ([#8296](https://octonion.institute/susytech/susy/pull/8296)) ([#8304](https://octonion.institute/susytech/susy/pull/8304))
+- Upgrader `remove raw unwrap` and bump semver ([#8251](https://octonion.institute/susytech/susy/pull/8251))
+- Cleaner binary shutdown system ([#8284](https://octonion.institute/susytech/susy/pull/8284))
+- Sofcore now uses rayon to 0.9 as a dependency ([#8296](https://octonion.institute/susytech/susy/pull/8296)) ([#8302](https://octonion.institute/susytech/susy/pull/8302))
+- Include suicided accounts in state diff ([#8297](https://octonion.institute/susytech/susy/pull/8297))
+- Remove svmjit ([#8229](https://octonion.institute/susytech/susy/pull/8229))
+- Build: fix updater rand dependency in Cargo.lock ([#8298](https://octonion.institute/susytech/susy/pull/8298))
+- Honor --max-peers if --min-peers is not specified ([#8087](https://octonion.institute/susytech/susy/pull/8087))
+- Auto-updater improvements ([#8078](https://octonion.institute/susytech/susy/pull/8078))
+- Dapps-fetcher: calculate keccak in-flight while reading the response ([#8294](https://octonion.institute/susytech/susy/pull/8294))
+- Cleanup Ellaism bootnodes ([#8276](https://octonion.institute/susytech/susy/pull/8276))
+- Allow unsafe js eval on Susy Wallet. ([#8204](https://octonion.institute/susytech/susy/pull/8204))
+- Remove RefCell from Header ([#8227](https://octonion.institute/susytech/susy/pull/8227))
+- Typo fix: todo with no content ([#8292](https://octonion.institute/susytech/susy/pull/8292))
+- Revert "ci: disable link-dead-code in coverage build ([#8118](https://octonion.institute/susytech/susy/pull/8118))" ([#8287](https://octonion.institute/susytech/susy/pull/8287))
+- Bump sofabi & sophon-types. ([#8258](https://octonion.institute/susytech/susy/pull/8258))
+- Allow customization of max WS connections. ([#8257](https://octonion.institute/susytech/susy/pull/8257))
+- Supress TemporaryInvalid verification failures. ([#8256](https://octonion.institute/susytech/susy/pull/8256))
+- Return null number for pending block in sof_getBlockByNumber ([#8281](https://octonion.institute/susytech/susy/pull/8281))
+- Use constant durations ([#8278](https://octonion.institute/susytech/susy/pull/8278))
+- Typo fix: Mode doc - SRLP should be client ([#8283](https://octonion.institute/susytech/susy/pull/8283))
+- Sof_uninstallfilter should return false for non-existent filter ([#8280](https://octonion.institute/susytech/susy/pull/8280))
+- Update `app_dirs` to 1.2.1 ([#8268](https://octonion.institute/susytech/susy/pull/8268))
+- Add missing license header for runtime.rs ([#8252](https://octonion.institute/susytech/susy/pull/8252))
+- Warp-only sync with warp-barrier [blocknumber] flag. ([#8228](https://octonion.institute/susytech/susy/pull/8228))
+- Replace all Rlp usages with UntrustedRlp except for sofcore views ([#8233](https://octonion.institute/susytech/susy/pull/8233))
+- Add test for sofstore-cli, fixes [#8027](https://octonion.institute/susytech/susy/issues/8027) ([#8187](https://octonion.institute/susytech/susy/pull/8187))
+- Update musicoin spec in line with gmc v2.6.2 ([#8242](https://octonion.institute/susytech/susy/pull/8242))
+- Fixed sofcore tx_filter ([#8200](https://octonion.institute/susytech/susy/pull/8200))
+- Update CLI help for susy-jsonrpc-apis, ws-apis and ipc-apis ([#8234](https://octonion.institute/susytech/susy/pull/8234))
+- Remove network stats ([#8225](https://octonion.institute/susytech/susy/pull/8225))
+- Node-filter does not use ChainNotify ([#8231](https://octonion.institute/susytech/susy/pull/8231))
+- Implement hardcoded sync in the light client ([#8075](https://octonion.institute/susytech/susy/pull/8075))
+- Update some of the dependencies for WASM ([#8223](https://octonion.institute/susytech/susy/pull/8223))
+- Bump swasmi version ([#8209](https://octonion.institute/susytech/susy/pull/8209))
+- Updated jsonrpc to point to the 1.11 branch ([#8180](https://octonion.institute/susytech/susy/pull/8180))
+- Change name Wallet -> UI ([#8164](https://octonion.institute/susytech/susy/pull/8164))
+- Introduce Susy UI ([#8202](https://octonion.institute/susytech/susy/pull/8202))
+- Update Changelogs ([#8175](https://octonion.institute/susytech/susy/pull/8175))
+- Returns number of topcis to take fr.. ([#8199](https://octonion.institute/susytech/susy/pull/8199))
+- Make docopt usage non-const ([#8189](https://octonion.institute/susytech/susy/pull/8189))
+- Avoid allocations when computing triehash. ([#8176](https://octonion.institute/susytech/susy/pull/8176))
+- Handle srlp decoding Result in patricia trie ([#8166](https://octonion.institute/susytech/susy/pull/8166))
+- Bump wasm libs ([#8171](https://octonion.institute/susytech/susy/pull/8171))
+- Re-enable signer, even with no UI. ([#8167](https://octonion.institute/susytech/susy/pull/8167))
+- Update daemonize ([#8165](https://octonion.institute/susytech/susy/pull/8165))
+- Some tiny modifications. ([#8163](https://octonion.institute/susytech/susy/pull/8163))
+- Secretstore: store key author address in db ([#7887](https://octonion.institute/susytech/susy/pull/7887))
+- Rename DatabaseValueView::new to from_srlp ([#8159](https://octonion.institute/susytech/susy/pull/8159))
+- Dapps: update susy-ui dependencies ([#8160](https://octonion.institute/susytech/susy/pull/8160))
+- Disable UI by default. ([#8105](https://octonion.institute/susytech/susy/pull/8105))
+- Fix swasmi x32 builds ([#8155](https://octonion.institute/susytech/susy/pull/8155))
+- Postpone Kovan hard fork ([#8137](https://octonion.institute/susytech/susy/pull/8137))
+- Secretstore: ability to identify requester via Public/Address ([#7886](https://octonion.institute/susytech/susy/pull/7886))
+- Optional dependency on secp256k1 for sofcrypto ([#8109](https://octonion.institute/susytech/susy/pull/8109))
+- Network: init discovery using healthy nodes ([#8061](https://octonion.institute/susytech/susy/pull/8061))
+- Check one step deeper if we're on release track branches ([#8134](https://octonion.institute/susytech/susy/pull/8134))
+- Explicitly mention pruning_history uses RAM ([#8130](https://octonion.institute/susytech/susy/pull/8130))
+- Remove `sofcrypto::{en,de}crypt_single_message`. ([#8126](https://octonion.institute/susytech/susy/pull/8126))
+- Fix typo ([#8124](https://octonion.institute/susytech/susy/pull/8124))
+- Secret_store: use `ecies::encrypt`/`ecies::decrypt`. ([#8125](https://octonion.institute/susytech/susy/pull/8125))
+- Fix comment for fn gas() in wasm/runtime ([#8122](https://octonion.institute/susytech/susy/pull/8122))
+- Structured srlp encoding in journaldb ([#8047](https://octonion.institute/susytech/susy/pull/8047))
+- Ci: disable link-dead-code in coverage build ([#8118](https://octonion.institute/susytech/susy/pull/8118))
+- Fix trace filter returning returning unrelated reward calls, closes [#8070](https://octonion.institute/susytech/susy/issues/8070) ([#8098](https://octonion.institute/susytech/susy/pull/8098))
+- Const time comparison ([#8113](https://octonion.institute/susytech/susy/pull/8113))
+- Replace reqwest with hyper ([#8099](https://octonion.institute/susytech/susy/pull/8099))
+- More dos protection ([#8104](https://octonion.institute/susytech/susy/pull/8104))
+- Remove the time dependency where possible ([#8100](https://octonion.institute/susytech/susy/pull/8100))
+- Fix comment for gas extern in Wasm runtime ([#8101](https://octonion.institute/susytech/susy/pull/8101))
+- Replace std::env::temp_dir with tempdir in tests ([#8103](https://octonion.institute/susytech/susy/pull/8103))
+- Fix Cargo.lock not parsable ([#8102](https://octonion.institute/susytech/susy/pull/8102))
+- Additional data in SVMTestClient ([#7964](https://octonion.institute/susytech/susy/pull/7964))
+- Update serde, serde-derive, sofabi-derive, syn, quote and srlp_derive ([#8085](https://octonion.institute/susytech/susy/pull/8085))
+- Sofcore-service ([#8089](https://octonion.institute/susytech/susy/pull/8089))
+- [contract-client] refactor ([#7978](https://octonion.institute/susytech/susy/pull/7978))
+- Revert removing blooms ([#8066](https://octonion.institute/susytech/susy/pull/8066))
+- Sofcore test::helpers cleanup ([#8086](https://octonion.institute/susytech/susy/pull/8086))
+- Add some dos protection ([#8084](https://octonion.institute/susytech/susy/pull/8084))
+- Wasm libraries bump ([#7970](https://octonion.institute/susytech/susy/pull/7970))
+- Echo back the message hash of a ping in the pong request ([#8042](https://octonion.institute/susytech/susy/pull/8042))
+- Add Kovan WASM activation blocknumber ([#8057](https://octonion.institute/susytech/susy/pull/8057))
+- [sofkey] Unify debug/display for Address/Public/Secret ([#8076](https://octonion.institute/susytech/susy/pull/8076))
+- Limit incoming connections. ([#8060](https://octonion.institute/susytech/susy/pull/8060))
+- Max code size on Kovan ([#8067](https://octonion.institute/susytech/susy/pull/8067))
+- Updater: apply exponential backoff after download failure ([#8059](https://octonion.institute/susytech/susy/pull/8059))
+- Make blockchain functions more idiomatic, avoid needless writes to cache_man ([#8054](https://octonion.institute/susytech/susy/pull/8054))
+- Make susy-patricia-trie more idiomatic and remove redundant code ([#8056](https://octonion.institute/susytech/susy/pull/8056))
+- Abstract devp2p ([#8048](https://octonion.institute/susytech/susy/pull/8048))
+- Update refs to shell ([#8051](https://octonion.institute/susytech/susy/pull/8051))
+- Fix cache & snapcraft CI build ([#8052](https://octonion.institute/susytech/susy/pull/8052))
+- Prelude to the block module cleanup ([#8025](https://octonion.institute/susytech/susy/pull/8025))
+- Add MCIP-6 Byzyantium transition to Musicoin spec ([#7841](https://octonion.institute/susytech/susy/pull/7841))
+- Bump master to 1.11.0 ([#8021](https://octonion.institute/susytech/susy/pull/8021))
+- `client` refactoring ([#7038](https://octonion.institute/susytech/susy/pull/7038))
+- [hardware wallet] sleeping -> pollling ([#8018](https://octonion.institute/susytech/susy/pull/8018))
+- Fixed broken link in README ([#8012](https://octonion.institute/susytech/susy/pull/8012))
+- Support susy protocol. ([#8035](https://octonion.institute/susytech/susy/pull/8035))
+- Add changelog for 1.8.11 stable and 1.9.4 beta ([#8017](https://octonion.institute/susytech/susy/pull/8017))
+- Fix for verify_block_basic crashing on invalid transaction srlp ([#8032](https://octonion.institute/susytech/susy/pull/8032))
+- Extract the hard dependency on rocksdb from the light client ([#8034](https://octonion.institute/susytech/susy/pull/8034))
+- Fixed parsing sofash seals and verify_block_undordered ([#8031](https://octonion.institute/susytech/susy/pull/8031))
+- Fixed sofstore sign ([#8026](https://octonion.institute/susytech/susy/pull/8026))
+- Ci: Fix cargo cache ([#7968](https://octonion.institute/susytech/susy/pull/7968))
+- Update ref to new shell ([#8024](https://octonion.institute/susytech/susy/pull/8024))

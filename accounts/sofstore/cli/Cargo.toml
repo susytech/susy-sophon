@@ -1,0 +1,24 @@
+[package]
+name = "sofstore-cli"
+version = "0.1.1"
+authors = ["Susytech <admin@superstring.ch>", "Paritytech <admin@parity.io>"]
+
+[dependencies]
+docopt = {version = "1.0",registry="susytech"}
+env_logger = {version="0.5",registry="susytech"}
+num_cpus = {version="1.6",registry="susytech"}
+rustc-hex = {version = "1.0",registry="susytech"}
+serde = {version = "1.0",registry="susytech"}
+serde_derive = {version = "1.0",registry="susytech"}
+parking_lot = {version = "0.7",registry="susytech"}
+sofstore = { path = "../" }
+dir = { path = '../../../util/dir' }
+panic_hook = { path = "../../../util/panic-hook" }
+
+[[bin]]
+name = "sofstore"
+path = "src/main.rs"
+doc = false
+
+[dev-dependencies]
+tempdir = {version="0.3.5",registry="susytech"}

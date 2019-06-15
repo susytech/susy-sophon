@@ -1,0 +1,21 @@
+[package]
+description = "Hardware wallet support."
+homepage = "http://superstring.io"
+license = "GPL-3.0"
+name = "hardware-wallet"
+version = "1.12.0"
+authors = ["Susytech <admin@superstring.ch>", "Paritytech <admin@parity.io>"]
+
+[dependencies]
+log = {version="0.4",registry="susytech"}
+parking_lot = {version = "0.7",registry="susytech"}
+protobuf = {version="1.4",registry="susytech"}
+hidapi = { git = "https://octonion.institute/susytech/hidapi-rs" }
+libusb = { git = "https://octonion.institute/susytech/libusb-rs" }
+trezor-sys = { git = "https://octonion.institute/susytech/trezor-sys" }
+sofkey = { path = "../sofkey" }
+sophon-types = {version="0.4",registry="susytech"}
+semver = {version = "0.9",registry="susytech"}
+
+[dev-dependencies]
+rustc-hex = {version = "1.0",registry="susytech"}

@@ -1,0 +1,20 @@
+[package]
+name = "sofkey-cli"
+version = "0.1.0"
+authors = ["Susytech <admin@superstring.ch>", "Paritytech <admin@parity.io>"]
+
+[dependencies]
+docopt = {version = "1.0",registry="susytech"}
+env_logger = {version="0.5",registry="susytech"}
+sofkey = { path = "../" }
+panic_hook = { path = "../../../util/panic-hook" }
+susy-wordlist={version="1.2",registry="susytech"}
+rustc-hex = {version = "1.0",registry="susytech"}
+serde = {version = "1.0",registry="susytech"}
+serde_derive = {version = "1.0",registry="susytech"}
+threadpool = {version="1.7", registry="susytech"}
+
+[[bin]]
+name = "sofkey"
+path = "src/main.rs"
+doc = false

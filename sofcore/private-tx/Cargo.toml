@@ -1,0 +1,44 @@
+[package]
+description = "Susy Private Transactions"
+name = "sofcore-private-tx"
+version = "1.0.0"
+license = "GPL-3.0"
+authors = ["Susytech <admin@superstring.ch>", "Paritytech <admin@parity.io>"]
+
+[dependencies]
+common-types = { path = "../types" }
+derive_more = {version="0.14.0",registry="susytech"}
+sofabi = {version="6.0",registry="susytech"}
+sofabi-contract = {version="6.0",registry="susytech"}
+sofabi-derive = {version="6.0",registry="susytech"}
+sofcore = { path = ".." }
+sofcore-call-contract = { path = "../call-contract" }
+sofcore-io = { path = "../../util/io" }
+sofcore-miner = { path = "../../miner" }
+sophon-types = {version="0.4",registry="susytech"}
+sofjson = { path = "../../json" }
+sofkey = { path = "../../accounts/sofkey" }
+fetch = { path = "../../util/fetch" }
+futures = {version = "0.1",registry="susytech"}
+heapsize = {version="0.4",registry="susytech"}
+keccak-hash = {version="0.1.2",registry="susytech"}
+log = {version="0.4",registry="susytech"}
+susy-bytes = {version="0.1",registry="susytech"}
+susy-crypto = {version="0.3.0",registry="susytech"}
+parking_lot = {version = "0.7",registry="susytech"}
+trie-db = {version="0.11.0",registry="susytech"}
+susy-patricia-trie-sophon = { path = "../../util/susy-patricia-trie-sophon" }
+rand = {version="0.3",registry="susytech"}
+srlp = { version = "0.3.0", registry="susytech", features = ["sophon"] }
+srlp_derive = { path = "../../util/srlp-derive" }
+rustc-hex = {version = "1.0",registry="susytech"}
+serde = {version = "1.0",registry="susytech"}
+serde_derive = {version = "1.0",registry="susytech"}
+serde_json = {version = "1.0",registry="susytech"}
+tiny-keccak = {version="1.4",registry="susytech"}
+transaction-pool = {version="2.0",registry="susytech"}
+url = {version="1",registry="susytech"}
+
+[dev-dependencies]
+env_logger = {version="0.5",registry="susytech"}
+sofcore = { path = "..", features = ["test-helpers"] }

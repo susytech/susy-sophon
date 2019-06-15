@@ -1,0 +1,7 @@
+[submodule "sofcore/res/sophon/tests"]
+	path = sofcore/res/sophon/tests
+	url = https://octonion.institute/susy-go/tests.git
+	branch = develop
+[submodule "sofcore/res/wasm-tests"]
+	path = sofcore/res/wasm-tests
+	url = https://octonion.institute/susytech/wasm-tests

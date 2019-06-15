@@ -1,0 +1,10 @@
+[package]
+name = "fastmap"
+version = "0.1.0"
+authors = ["Susytech <admin@superstring.ch>", "Paritytech <admin@parity.io>"]
+description = "Specialized version of `HashMap` with H256 keys and fast hashing function."
+license = "GPL-3.0"
+
+[dependencies]
+sophon-types = {version="0.4",registry="susytech"}
+plain_hasher = {version="0.2",registry="susytech"}

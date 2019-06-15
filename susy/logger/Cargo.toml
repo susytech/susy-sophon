@@ -1,0 +1,17 @@
+[package]
+description = "Log implementation for Susy"
+name = "sofcore-logger"
+version = "1.12.0"
+license = "GPL-3.0"
+authors = ["Susytech <admin@superstring.ch>", "Paritytech <admin@parity.io>"]
+
+[dependencies]
+log = {version="0.4",registry="susytech"}
+env_logger = {version="0.5",registry="susytech"}
+atty = {version="0.2",registry="susytech"}
+lazy_static = {version="1.0",registry="susytech"}
+regex = {version = "1.0",registry="susytech"}
+time = {version="0.1",registry="susytech"}
+parking_lot = {version = "0.7",registry="susytech"}
+arrayvec = {version="0.4",registry="susytech"}
+ansi_term = {version = "0.10",registry="susytech"}

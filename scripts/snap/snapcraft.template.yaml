@@ -1,0 +1,53 @@
+name:               susy
+version:            $VERSION
+architectures:      [$BUILD_ARCH]
+grade:              $GRADE
+confinement:        strict
+
+summary:            Fast, light, robust Sophon implementation
+description:        |
+  Susy's goal is to be the fastest, lightest, and most secure Sophon
+  client. We are developing Susy using the sophisticated and cutting-edge
+  Rust programming language. Susy is licensed under the GPLv3, and can be
+  used for all your Sophon needs.
+
+apps:
+  susy:
+    command:        susy
+    plugs:          [home, network, network-bind, mount-observe, removable-media, x11, unity7, desktop, desktop-legacy, wayland]
+    desktop:        ./usr/share/applications/susy.desktop
+  susy-svm:
+    command:        susy-svm
+    plugs:          [home, network, network-bind, removable-media]
+  sofkey:
+    command:        sofkey
+    plugs:          [home, removable-media]
+  sofstore:
+    command:        sofstore
+    plugs:          [home, removable-media]
+  whisper:
+    command:        whisper
+    plugs:          [home, network-bind, removable-media]
+
+icon:               ./scripts/snap/icon.png
+
+parts:
+  desktop-icon:
+    source:         ./scripts/snap
+    plugin:         nil
+    override-build:        |
+      mkdir -p $SNAPCRAFT_PART_INSTALL/usr/share/applications
+      mkdir -p $SNAPCRAFT_PART_INSTALL/usr/share/pixmaps
+      cp -v ./susy.desktop $SNAPCRAFT_PART_INSTALL/usr/share/applications/
+      cp -v ./icon.png $SNAPCRAFT_PART_INSTALL/usr/share/pixmaps/
+  susy:
+    source:         ./artifacts/$CARGO_TARGET
+    plugin:         nil
+    override-build:        |
+      mkdir -p $SNAPCRAFT_PART_INSTALL/usr/bin
+      cp -v susy $SNAPCRAFT_PART_INSTALL/usr/bin/susy
+      cp -v susy-svm $SNAPCRAFT_PART_INSTALL/usr/bin/susy-svm
+      cp -v sofkey $SNAPCRAFT_PART_INSTALL/usr/bin/sofkey
+      cp -v sofstore $SNAPCRAFT_PART_INSTALL/usr/bin/sofstore
+      cp -v whisper $SNAPCRAFT_PART_INSTALL/usr/bin/whisper
+    stage-packages: [libudev1, libstdc++6, cmake, libdb5.3]

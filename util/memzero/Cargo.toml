@@ -1,0 +1,10 @@
+[package]
+name = "memzero"
+version = "0.1.0"
+description = "A wrapper for zero-ing out memory when dropped"
+license = "GPL-3.0"
+homepage = "http://superstring.io"
+repository = "https://octonion.institute/susytech/susy-sophon"
+docs = "https://docs.rs/crate/memzero"
+authors = ["Susytech <admin@superstring.ch>", "Paritytech <admin@parity.io>"]
+edition = "2018"

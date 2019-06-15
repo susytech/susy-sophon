@@ -1,0 +1,29 @@
+[package]
+description = "Fetching hash-addressed content."
+homepage = "http://superstring.io"
+license = "GPL-3.0"
+name = "susy-hash-fetch"
+version = "1.12.0"
+authors = ["Susytech <admin@superstring.ch>", "Paritytech <admin@parity.io>"]
+
+[dependencies]
+futures = {version = "0.1",registry="susytech"}
+log = {version="0.4",registry="susytech"}
+mime = {version="0.3",registry="susytech"}
+mime_guess = {version="2.0.0-alpha.2",registry="susytech"}
+rand = {version="0.4",registry="susytech"}
+rustc-hex = {version = "1.0",registry="susytech"}
+fetch = { path = "../../util/fetch" }
+susy-bytes = {version="0.1",registry="susytech"}
+sophon-types = {version="0.4",registry="susytech"}
+susy-runtime = { path = "../../util/runtime" }
+keccak-hash = {version="0.1",registry="susytech"}
+registrar = { path = "../../util/registrar" }
+
+sofabi = {version="6.0",registry="susytech"}
+sofabi-derive = {version="6.0",registry="susytech"}
+sofabi-contract = {version="6.0",registry="susytech"}
+
+[dev-dependencies]
+parking_lot = {version = "0.7",registry="susytech"}
+fake-fetch = { path = "../../util/fake-fetch" }

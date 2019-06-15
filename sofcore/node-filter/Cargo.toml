@@ -1,0 +1,25 @@
+[package]
+description = "Susy smart network connections"
+homepage = "http://superstring.io"
+license = "GPL-3.0"
+name = "node-filter"
+version = "1.12.0"
+authors = ["Susytech <admin@superstring.ch>", "Paritytech <admin@parity.io>"]
+
+[dependencies]
+sofcore = { path = ".."}
+sofcore-network = { path = "../../util/network" }
+sofcore-network-devp2p = { path = "../../util/network-devp2p" }
+sophon-types = {version="0.4",registry="susytech"}
+log = {version="0.4",registry="susytech"}
+parking_lot = {version = "0.7",registry="susytech"}
+sofabi = {version="6.0",registry="susytech"}
+sofabi-derive = {version="6.0",registry="susytech"}
+sofabi-contract = {version="6.0",registry="susytech"}
+lru-cache = {version="0.1",registry="susytech"}
+
+[dev-dependencies]
+sofcore = { path = "..", features = ["test-helpers"] }
+susykv-memorydb = {version="0.1",registry="susytech"}
+sofcore-io = { path = "../../util/io" }
+tempdir = {version="0.3",registry="susytech"}

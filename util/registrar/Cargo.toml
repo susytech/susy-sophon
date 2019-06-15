@@ -1,0 +1,13 @@
+[package]
+description = "Registar for Susy"
+name = "registrar"
+version = "0.0.1"
+license = "GPL-3.0"
+authors = ["Susytech <admin@superstring.ch>", "Paritytech <admin@parity.io>"]
+
+[dependencies]
+futures = {version = "0.1",registry="susytech"}
+sofabi = {version="6.0",registry="susytech"}
+sofabi-derive = {version="6.0",registry="susytech"}
+sofabi-contract = {version="6.0",registry="susytech"}
+keccak-hash = {version="0.1",registry="susytech"}

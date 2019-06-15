@@ -1,0 +1,33 @@
+[package]
+description = "Sofcore blockchain database"
+homepage = "http://superstring.io"
+license = "GPL-3.0"
+name = "sofcore-blockchain"
+version = "0.1.0"
+authors = ["Susytech <admin@superstring.ch>", "Paritytech <admin@parity.io>"]
+edition = "2018"
+
+[dependencies]
+ansi_term = {version = "0.10",registry="susytech"}
+blooms-db = { path = "../../util/blooms-db" }
+common-types = { path = "../types" }
+sofcore-db = { path = "../db" }
+sophon-types = {version="0.4",registry="susytech"}
+heapsize = {version="0.4",registry="susytech"}
+itertools = {version="0.5",registry="susytech"}
+susykv = {version="0.1",registry="susytech"}
+log = {version="0.4",registry="susytech"}
+susy-bytes = {version="0.1",registry="susytech"}
+parking_lot = {version = "0.7",registry="susytech"}
+rayon = {version="1.0",registry="susytech"}
+srlp = { version = "0.3.0", registry="susytech", features = ["sophon"] }
+srlp_compress = { path = "../../util/srlp-compress" }
+srlp_derive = { path = "../../util/srlp-derive" }
+
+[dev-dependencies]
+env_logger = {version="0.5",registry="susytech"}
+sofkey = { path = "../../accounts/sofkey" }
+keccak-hash = {version="0.1",registry="susytech"}
+rustc-hex = {version = "1.0",registry="susytech"}
+tempdir = {version="0.3",registry="susytech"}
+susykv-memorydb = {version="0.1",registry="susytech"}

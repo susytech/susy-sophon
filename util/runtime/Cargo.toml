@@ -1,0 +1,11 @@
+[package]
+description = "Susy Runtime"
+homepage = "http://superstring.io"
+license = "GPL-3.0"
+name = "susy-runtime"
+version = "0.1.0"
+authors = ["Susytech <admin@superstring.ch>", "Paritytech <admin@parity.io>"]
+
+[dependencies]
+futures = {version = "0.1",registry="susytech"}
+tokio = {version="~0.1.9",registry="susytech"}

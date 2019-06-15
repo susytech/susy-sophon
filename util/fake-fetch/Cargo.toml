@@ -1,0 +1,11 @@
+[package]
+description = "Mock fetcher for testing"
+name = "fake-fetch"
+version = "0.0.1"
+license = "GPL-3.0"
+authors = ["Susytech <admin@superstring.ch>", "Paritytech <admin@parity.io>"]
+
+[dependencies]
+fetch = { path = "../fetch" }
+futures = {version = "0.1",registry="susytech"}
+hyper = {version="0.12",registry="susytech"}

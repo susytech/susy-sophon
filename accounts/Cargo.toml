@@ -1,0 +1,28 @@
+[package]
+description = "Account management for Susy Sophon"
+homepage = "http://superstring.io"
+license = "GPL-3.0"
+name = "sofcore-accounts"
+version = "0.1.0"
+authors = ["Susytech <admin@superstring.ch>", "Paritytech <admin@parity.io>"]
+edition = "2018"
+
+[dependencies]
+common-types = { path = "../sofcore/types" }
+sofkey = { path = "sofkey" }
+sofstore = { path = "sofstore" }
+log = {version="0.4",registry="susytech"}
+parking_lot = {version = "0.7",registry="susytech"}
+serde = {version = "1.0",registry="susytech"}
+serde_derive = {version = "1.0",registry="susytech"}
+serde_json = {version = "1.0",registry="susytech"}
+
+[target.'cfg(any(target_os = "linux", target_os = "macos", target_os = "windows"))'.dependencies]
+hardware-wallet = { path = "hw" }
+
+[target.'cfg(not(any(target_os = "linux", target_os = "macos", target_os = "windows")))'.dependencies]
+fake-hardware-wallet = { path = "fake-hardware-wallet" }
+
+[dev-dependencies]
+sophon-types = {version="0.4",registry="susytech"}
+tempdir = {version="0.3",registry="susytech"}

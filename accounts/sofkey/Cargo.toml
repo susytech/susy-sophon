@@ -1,0 +1,21 @@
+[package]
+name = "sofkey"
+version = "0.3.0"
+authors = ["Susytech <admin@superstring.ch>", "Paritytech <admin@parity.io>"]
+
+[dependencies]
+byteorder = {version="1.0", registry="susytech"}
+edit-distance = {version="2.0",registry="susytech"}
+susy-crypto = {version="0.3.0",registry="susytech"}
+sof-secp256k1 = { git = "https://octonion.institute/susytech/susy-secp256k1" }
+sophon-types = {version="0.4",registry="susytech"}
+lazy_static = {version="1.0",registry="susytech"}
+log = {version="0.4",registry="susytech"}
+memzero = { path = "../../util/memzero" }
+susy-wordlist = {version="1.2",registry="susytech"}
+quick-error = {version="1.2.2",registry="susytech"}
+rand = {version="0.4",registry="susytech"}
+rustc-hex = {version = "1.0",registry="susytech"}
+serde = {version = "1.0",registry="susytech"}
+serde_derive = {version = "1.0",registry="susytech"}
+tiny-keccak = {version="1.4",registry="susytech"}

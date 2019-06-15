@@ -1,0 +1,29 @@
+[package]
+name = "sip-712"
+version = "0.1.0"
+authors = ["Susytech <admin@superstring.ch>", "Paritytech <admin@parity.io>"]
+repository = "https://octonion.institute/susytech/susy-sophon"
+documentation = "https://docs.rs/sip-712"
+readme = "README.md"
+description = "sip-712 encoding"
+keywords = ["sip-712", "sip712", "sip"]
+license = "GPL-3.0"
+edition = "2018"
+
+[dependencies]
+serde_derive = {version = "1.0",registry="susytech"}
+serde = {version = "1.0",registry="susytech"}
+serde_json = {version = "1.0",registry="susytech"}
+sofabi = {version="6.0",registry="susytech"}
+keccak-hash = {version="0.1",registry="susytech"}
+sophon-types = {version="0.4",registry="susytech"}
+failure = {version="0.1",registry="susytech"}
+itertools = {version="0.7",registry="susytech"}
+lazy_static = {version="1.1",registry="susytech"}
+toolshed = {version="0.4",registry="susytech"}
+regex = {version = "1.0",registry="susytech"}
+validator = {version="0.8",registry="susytech"}
+validator_derive = {version="0.8",registry="susytech"}
+lunarity-lexer = {version="0.1",registry="susytech"}
+rustc-hex = {version="2.0", registry="susytech"}
+indexmap = {version="1.0.2",registry="susytech"}

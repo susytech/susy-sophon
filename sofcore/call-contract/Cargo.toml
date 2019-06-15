@@ -1,0 +1,11 @@
+[package]
+name = "sofcore-call-contract"
+version = "0.1.0"
+license = "GPL-3.0"
+authors = ["Susytech <admin@superstring.ch>", "Paritytech <admin@parity.io>"]
+edition = "2018"
+
+[dependencies]
+types = { path = "../types", package = "common-types" }
+sophon-types = {version="0.4",registry="susytech"}
+bytes = { version = "0.1", registry="susytech",package = "susy-bytes" }

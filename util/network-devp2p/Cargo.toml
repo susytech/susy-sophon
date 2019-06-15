@@ -1,0 +1,45 @@
+[package]
+description = "DevP2P implementation of the sofcore network library"
+homepage = "http://superstring.io"
+license = "GPL-3.0"
+name = "sofcore-network-devp2p"
+version = "1.12.0"
+authors = ["Susytech <admin@superstring.ch>", "Paritytech <admin@parity.io>"]
+
+[dependencies]
+log = {version="0.4",registry="susytech"}
+mio = {version="0.6.8",registry="susytech"}
+bytes = {version="0.4",registry="susytech"}
+rand = {version="0.4",registry="susytech"}
+tiny-keccak = {version="1.4",registry="susytech"}
+rust-crypto = {version="0.2.34",registry="susytech"}
+slab = {version="0.2",registry="susytech"}
+igd = {version="0.7",registry="susytech"}
+libc = {version="0.2.7",registry="susytech"}
+parking_lot = {version = "0.7",registry="susytech"}
+ansi_term = {version = "0.10",registry="susytech"}
+rustc-hex = {version = "1.0",registry="susytech"}
+sofcore-io = { path = "../io", features = ["mio"] }
+susy-bytes = {version="0.1",registry="susytech"}
+susy-crypto = {version="0.3.0",registry="susytech"}
+sofcore-network = { path = "../network" }
+sophon-types = {version="0.4",registry="susytech"}
+sofkey = { path = "../../accounts/sofkey" }
+srlp = { version = "0.3.0", registry="susytech", features = ["sophon"] }
+susy-path = {version="0.1",registry="susytech"}
+ipnetwork = {version="0.12.6",registry="susytech"}
+keccak-hash = {version="0.1",registry="susytech"}
+susy-snappy = {version="0.1",registry="susytech"}
+serde = {version = "1.0",registry="susytech"}
+serde_json = {version = "1.0",registry="susytech"}
+serde_derive = {version = "1.0",registry="susytech"}
+error-chain = { version = "0.12", registry="susytech", default-features = false }
+lru-cache = {version="0.1",registry="susytech"}
+
+[dev-dependencies]
+env_logger = {version="0.5",registry="susytech"}
+tempdir = {version="0.3",registry="susytech"}
+assert_matches = {version="1.2",registry="susytech"}
+
+[features]
+default = []

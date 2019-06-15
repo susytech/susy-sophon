@@ -1,0 +1,11 @@
+[package]
+name = "triehash-sophon"
+version = "0.2.0"
+authors = ["Susytech <admin@superstring.ch>", "Paritytech <admin@parity.io>"]
+description = "Trie-root helpers, sophon style"
+license = "GPL-3.0"
+
+[dependencies]
+triehash = { version = "0.4.0", registry="susytech", features = ["sophon"] }
+sophon-types = {version="0.4",registry="susytech"}
+keccak-hasher = { path = "../keccak-hasher" }

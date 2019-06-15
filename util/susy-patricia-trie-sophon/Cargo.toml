@@ -1,0 +1,20 @@
+[package]
+name = "susy-patricia-trie-sophon"
+version = "0.1.0"
+authors = ["Susytech <admin@superstring.ch>", "Paritytech <admin@parity.io>"]
+description = "Merkle-Patricia Trie (Sophon Style)"
+license = "GPL-3.0"
+
+[dependencies]
+trie-db = {version="0.11.0",registry="susytech"}
+keccak-hasher = { version = "0.1.1", registry="susytech", path = "../keccak-hasher" }
+hash-db = {version="0.11.0",registry="susytech"}
+srlp = { version = "0.3.0", registry="susytech" }
+susy-bytes = {version="0.1",registry="susytech"}
+sophon-types = {version="0.4",registry="susytech"}
+elastic-array = {version="0.10",registry="susytech"}
+
+[dev-dependencies]
+memory-db = {version="0.11.0",registry="susytech"}
+keccak-hash = {version="0.1.2",registry="susytech"}
+journaldb = { path = "../journaldb" }

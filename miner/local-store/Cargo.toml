@@ -1,0 +1,19 @@
+[package]
+name = "susy-local-store"
+description = "Manages persistent local node data."
+version = "0.1.0"
+authors = ["Susytech <admin@superstring.ch>", "Paritytech <admin@parity.io>"]
+
+[dependencies]
+common-types = { path = "../../sofcore/types" }
+sofcore-io = { path = "../../util/io" }
+susykv = {version="0.1",registry="susytech"}
+log = {version="0.4",registry="susytech"}
+srlp = { version = "0.3.0", registry="susytech", features = ["sophon"] }
+serde = {version = "1.0",registry="susytech"}
+serde_derive = {version = "1.0",registry="susytech"}
+serde_json = {version = "1.0",registry="susytech"}
+
+[dev-dependencies]
+sofkey = { path = "../../accounts/sofkey" }
+susykv-memorydb = {version="0.1",registry="susytech"}

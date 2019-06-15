@@ -1,0 +1,10 @@
+[package]
+name = "memory-cache"
+version = "0.1.0"
+authors = ["Susytech <admin@superstring.ch>", "Paritytech <admin@parity.io>"]
+description = "An LRU-cache which operates on memory used"
+license = "GPL3"
+
+[dependencies]
+heapsize = {version="0.4",registry="susytech"}
+lru-cache = {version="0.1",registry="susytech"}

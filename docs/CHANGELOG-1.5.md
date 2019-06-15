@@ -1,0 +1,1017 @@
+Note: Susy 1.5 reached End-of-Life on 2017-07-28 (EOL).
+
+## Susy [v1.5.12](https://octonion.institute/susytech/susy/releases/tag/v1.5.12) (2017-03-27)
+
+Stable release that adds support for a new warp sync snapshot format.
+
+- Stable Backports [#5297](https://octonion.institute/susytech/susy/pull/5297)
+  - Bump to v1.5.12
+  - Fine grained snapshot chunking
+
+## Susy [v1.5.11](https://octonion.institute/susytech/susy/releases/tag/v1.5.11) (2017-03-14)
+
+Susy 1.5.11 Includes a patch for a more comprehensive block verification.
+
+- Bump to v1.5.11
+- Additional kovan params
+- Recalculate receipt roots in close_and_lock
+- Bump to v1.5.10
+
+## Susy [v1.5.9](https://octonion.institute/susytech/susy/releases/tag/v1.5.9) (2017-03-11)
+
+First stable release of 1.5.x series. This release enables SIP-161 transaction replay protection for PoA networks.
+
+- Bump to v1.5.9
+- Fix auto-updater stable [#4869](https://octonion.institute/susytech/susy/pull/4869)
+- Fixing windows build script
+- Bump js-precompiled 20170308-152339
+- Force js update
+- Stable Engine backports [#4807](https://octonion.institute/susytech/susy/pull/4807)
+  - Calibrate before rejection
+  - Change flag name
+  - Add sip155
+  - Fix build
+  - Make network_id default
+- Switch js branch to stable
+- Bump to v1.5.8
+
+## Susy [v1.5.7](https://octonion.institute/susytech/susy/releases/tag/v1.5.7) (2017-03-07)
+
+This release resolves a single issue with failing auto-updates.
+
+- Update ETC bootnodes [#4794](https://octonion.institute/susytech/susy/pull/4794)
+- Bump to v1.5.7
+- Sane updater [#4658](https://octonion.institute/susytech/susy/pull/4658)
+  - Disable if files can't be moved.
+  - Make updater avoid downloading earlier versions.
+
+## Susy [v1.5.6](https://octonion.institute/susytech/susy/releases/tag/v1.5.6) (2017-03-06)
+
+This release among various stability fixes adds support for a new [Kovan](https://github.com/kovan-testnet/proposal) testnet.
+
+See [full list of changes.](https://octonion.institute/susytech/susy/compare/v1.5.4...v1.5.6):
+
+- Beta Update comments and reg ABI [#4788](https://octonion.institute/susytech/susy/pull/4788)
+  - Update comments.
+  - Fix up new ABI.
+- Bump to v1.5.6 in beta [#4786](https://octonion.institute/susytech/susy/pull/4786)
+- Beta Optimize signature for fallback function. ([#4780](https://octonion.institute/susytech/susy/pull/4780)) [#4784](https://octonion.institute/susytech/susy/pull/4784)
+- Beta Add registrar fields ([#4716](https://octonion.institute/susytech/susy/pull/4716)) [#4781](https://octonion.institute/susytech/susy/pull/4781)
+- Beta Sophyscan links ([#4772](https://octonion.institute/susytech/susy/pull/4772)) [#4778](https://octonion.institute/susytech/susy/pull/4778)
+  - Sophyscan links [#4772](https://octonion.institute/susytech/susy/pull/4772)
+    - Use netVersion to determine external links
+    - Update additional isTest references
+  - Port tests
+  - Update address links
+  - Signer accountlink isTest
+- Beta Fix invalid props [#4767](https://octonion.institute/susytech/susy/pull/4767)
+- Backporting to beta [#4741](https://octonion.institute/susytech/susy/pull/4741)
+  - New chains [#4720](https://octonion.institute/susytech/susy/pull/4720)
+    - Add Kovan chain.
+    - Fix up --testnet.
+    - Fix tests.
+  - Fix to UglifyJS 2.8.2 to fix app build issues [#4723](https://octonion.institute/susytech/susy/pull/4723)
+  - Update classic bootnodes, ref #4717 [#4735](https://octonion.institute/susytech/susy/pull/4735)
+  - Allow failure docker beta
+  - Adjust pruning history default to 64 [#4709](https://octonion.institute/susytech/susy/pull/4709)
+  - Backporting from master
+    - Update docker-build.sh
+    - Update gitlab.ci
+    - Fix docker hub build
+    - Update gitlab
+    - Docker beta-release->latest
+    - Add registry.
+    - Add info on forks.
+    - Fixed spec file
+  - Support both V1 & V2 DataChanged events in registry [#4734](https://octonion.institute/susytech/susy/pull/4734)
+    - Add info on forks.
+    - Add new registry ABI
+    - Import registry2 & fix exports
+    - Select ABI based on code hash
+    - Render new event types (owner not available)
+    - New registry.
+    - Rename old chain.
+    - Fix test.
+    - Another fix.
+    - Finish rename.
+  - Fixed fonts URLs [#4579](https://octonion.institute/susytech/susy/pull/4579)
+  - Fix Token Reg Dapp issues in Firefox [#4489](https://octonion.institute/susytech/susy/pull/4489)
+    - Fix overflow issues in Firefox [#4348](https://octonion.institute/susytech/susy/issues/4348)
+    - Fix wrong Promise inferance
+    - Revert "Add new Componennt for Token Images [#4496](https://octonion.institute/susytech/susy/issues/4496)"
+    - Add new Componennt for Token Images [#4496](https://octonion.institute/susytech/susy/issues/4496)
+  - Add StackEventListener [#4745](https://octonion.institute/susytech/susy/pull/4745)
+  - Update testnet detection [#4746](https://octonion.institute/susytech/susy/pull/4746)
+  - Fix Account Selection in Signer [#4744](https://octonion.institute/susytech/susy/pull/4744)
+    - Can pass FormattedMessage to Input (eg. Status // RPC Enabled)
+    - Simple fixed-width fix for Accoutn Selection in Susy Signer
+- Beta backports [#4763](https://octonion.institute/susytech/susy/pull/4763)
+  - Https://mkr-market -> https://oasisdex.com [#4701](https://octonion.institute/susytech/susy/pull/4701)
+  - Wallet s/delete/forget/ [#4741](https://octonion.institute/susytech/susy/pull/4741)
+- Update classic bootnodes [#4735](https://octonion.institute/susytech/susy/pull/4735)
+- Engine backports [#4718](https://octonion.institute/susytech/susy/pull/4718)
+  - Custom dev presets
+  - Add registrar field
+  - Use constructor for dev registrar
+  - Fix test
+- Beta Adjust pruning history default to 64 [#4709](https://octonion.institute/susytech/susy/pull/4709)
+- Bump to v1.5.5
+
+## Susy [v1.5.4](https://octonion.institute/susytech/susy/releases/tag/v1.5.4) (2017-02-23)
+
+A couple of issue fixed in this release:
+
+- Susy now allows uncles headers to have timestamp set to arbitrary future value.
+- Importing keys from graviton is now working again.
+
+Changes:
+
+- Beta Fix Graviton account import [#4643](https://octonion.institute/susytech/susy/pull/4643)
+  - Fix Graviton import - actually pass addresses through
+  - Fix graviton accounts not displayed
+  - Port saving of returned addresses (master MobX, beta state)
+  - Log result -> importGravitonAccounts
+- Beta Backporting ([#4633](https://octonion.institute/susytech/susy/pull/4633)) [#4640](https://octonion.institute/susytech/susy/pull/4640)
+  - Tweak some checks.
+  - Fixed build and added a difficulty test
+  - Bump to v1.5.4
+
+## Susy [v1.5.3](https://octonion.institute/susytech/susy/releases/tag/v1.5.3) (2017-02-20)
+
+This is a maintenance release that fixes a number of stability issues. Notably this resolves an issue where Susy would allow a pre SIP-155 transaction into the sealed block.
+
+See [full list of changes](https://octonion.institute/susytech/susy/compare/v1.5.2...v1.5.3):
+
+- Bump to v1.5.3 [#4611](https://octonion.institute/susytech/susy/pull/4611)
+- Handle invalid ABI retrieved from address_book gracefully ([#4606](https://octonion.institute/susytech/susy/pull/4606)) [#4610](https://octonion.institute/susytech/susy/pull/4610)
+  - Handle invalid ABI gracefully
+  - Also include failed abi in log
+- Backporting to beta [#4602](https://octonion.institute/susytech/susy/pull/4602)
+  - Static link for snappy
+  - added 3 warpnodes for ropsten ([#4289](https://octonion.institute/susytech/susy/pull/4289))
+  - Fixed indentation
+- Validate transaction before adding to the queue [#4600](https://octonion.institute/susytech/susy/pull/4600)
+- Beta backports [#4569](https://octonion.institute/susytech/susy/pull/4569)
+  - Fixing svmbin compilation and added standard build. ([#4561](https://octonion.institute/susytech/susy/pull/4561))
+  - Alias for personal_sendTransaction ([#4554](https://octonion.institute/susytech/susy/pull/4554))
+  - Fix console dapp ([#4544](https://octonion.institute/susytech/susy/pull/4544))
+  - Fixing linting issues. Better support for console as secure app
+  - Fixing linting issues
+  - Fix no data sent in TxQueue dapp ([#4502](https://octonion.institute/susytech/susy/pull/4502))
+  - Fix wrong PropType req for Embedded Signer
+  - Fix wrong data for tx #4499
+- Explicitly set seconds to 0 from selector ([#4559](https://octonion.institute/susytech/susy/pull/4559)) [#4571](https://octonion.institute/susytech/susy/pull/4571)
+  - Explicitly set seconds/milli to 0
+  - Use condition time & block setters consistently
+  - Fix failing test
+  - test for 0 ms & sec
+  - It cannot hurt, clone date before setting
+  - Prettier date test constants (OCD)
+- Remove invalid expectation [#4542](https://octonion.institute/susytech/susy/pull/4542)
+- Skip OOG check for simple transfers [#4558](https://octonion.institute/susytech/susy/pull/4558) [#4560](https://octonion.institute/susytech/susy/pull/4560)
+ - Skip OOG check for simple transfers [#4558](https://octonion.institute/susytech/susy/pull/4558)
+ - Fix failing test
+
+## Susy [v1.5.2](https://octonion.institute/susytech/susy/releases/tag/v1.5.2) (2017-02-08)
+
+This release brings a few stability fixes along with a feature that allows queuing transactions that are activated and send out on selected date or block number.
+- Debian packages have been updated to require `libssl1.0.0` for better compatibility.
+- sof_sign (and susy_postSign) used to return concatenated r ++ s ++ v with v being 0 or 1. it now agrees with graviton as v ++ r ++ s with v being 27 or 28.
+
+Susy Wallet
+- Accounts & ShapeShift integration now displays QR code for scanning from mobile wallets
+- Dapp integration now allows for the selection of available accounts and the setting of the default account
+- Transaction creation now allows for the selection of future blocks or timestamps after which the transaction is released
+
+Susy Extension
+- First release of the Susy Extension, allowing for Susy integration from web-based dapps
+
+See [full list of changes](https://octonion.institute/susytech/susy/compare/v1.5.0...v1.5.2):
+- Work with string numbers in contract (Fixes #4472) ([#4478](https://octonion.institute/susytech/susy/pull/4478)) [#4480](https://octonion.institute/susytech/susy/pull/4480)
+- Sof_sign improvements backport [#4473](https://octonion.institute/susytech/susy/pull/4473)
+  - Fix postsign ([#4347](https://octonion.institute/susytech/susy/pull/4347))
+  - Fix whitespace.
+  - Fix post sign.
+  - Fix message.
+  - Fix tests.
+  - Rest of the problems.
+  - All hail the linter and its omniscience.
+  - ...and its divine omniscience.
+  - Grumbles and wording.
+  - Make signing compatible with graviton. ([#4468](https://octonion.institute/susytech/susy/pull/4468))
+- Sort gas price corpus when hitting genesis [#4471](https://octonion.institute/susytech/susy/pull/4471)
+- Wallet dev chain fix [#4466](https://octonion.institute/susytech/susy/pull/4466)
+- Fixing histogram again [#4464](https://octonion.institute/susytech/susy/pull/4464)
+- Beta backports [#4462](https://octonion.institute/susytech/susy/pull/4462)
+  - Support HTML5-routed dapps ([#4173](https://octonion.institute/susytech/susy/pull/4173))
+  - Fix compilation on latest nightly
+  - Updating precompiled
+- Fix Portal scrolling getting stuck [#4456](https://octonion.institute/susytech/susy/pull/4456)
+  - Fix Portal scrolling getting stuck
+  - DappCard container flex
+  - Container height to 100%
+- Fix AccountCard stretch to 100% [#4451](https://octonion.institute/susytech/susy/pull/4451)
+- Fix wrong output format of peers ([#4270](https://octonion.institute/susytech/susy/pull/4270)) [#4442](https://octonion.institute/susytech/susy/pull/4442)
+  - Fix wrong output format of peers
+  - Add outPeer tests
+- Opening extension page without inline installation [#4441](https://octonion.institute/susytech/susy/pull/4441)
+  - Open popup without attempting inline
+  - Cater for all .susyweb.site addresses
+- Fix svg extension image webpack inlining [#4437](https://octonion.institute/susytech/susy/pull/4437)
+- Backporting to beta [#4434](https://octonion.institute/susytech/susy/pull/4434)
+  - Bump to v1.5.2
+  - Fix sof_sign/susy_postSign ([#4432](https://octonion.institute/susytech/susy/pull/4432))
+  - Fix dispatch for signing.
+  - Remove console log
+  - Fix signing & tests.
+- Returning default account as coinbase [#4431](https://octonion.institute/susytech/susy/pull/4431)
+  - Returning first address as coinbase
+  - Allowing sender alteration in signer
+  - Adding default account RPC
+- UI updates for 1.5.1 [#4429](https://octonion.institute/susytech/susy/pull/4429)
+  - S/Delete Contract/Forget Contract/ ([#4237](https://octonion.institute/susytech/susy/pull/4237))
+  - Adjust the location of the signer snippet ([#4155](https://octonion.institute/susytech/susy/pull/4155))
+  - Additional building-block UI components ([#4239](https://octonion.institute/susytech/susy/pull/4239))
+  - Currency WIP
+  - Expand tests
+  - Pass className
+  - Add QrCode
+  - Export new components in ~/ui
+  - S/this.props.netSymbol/netSymbol/
+  - Fix import case
+  - Ui/SectionList component ([#4292](https://octonion.institute/susytech/susy/pull/4292))
+  - Array chunking utility
+  - Add SectionList component
+  - Add TODOs to indicate possible future work
+  - Add missing overlay style (as used in dapps at present)
+  - Add a Playground for the UI Components ([#4301](https://octonion.institute/susytech/susy/pull/4301))
+  - Playground // WIP
+  - Linting
+  - Add Examples with code
+  - CSS Linting
+  - Linting
+  - Add Connected Currency Symbol
+  - 2015-2017
+  - Added `renderSymbol` tests
+  - PR grumbles
+  - Add Sof and Btc QRCode examples
+  - 2015-2017
+  - Add tests for playground
+  - Fixing tests
+  - Split Dapp icon into ui/DappIcon ([#4308](https://octonion.institute/susytech/susy/pull/4308))
+  - Add QrCode & Copy to ShapeShift ([#4322](https://octonion.institute/susytech/susy/pull/4322))
+  - Extract CopyIcon to ~/ui/Icons
+  - Add copy & QrCode address
+  - Default size 4
+  - Add bitcoin: link
+  - Use protocol links applicable to coin exchanged
+  - Remove .only
+  - Display QrCode for accounts, addresses & contracts ([#4329](https://octonion.institute/susytech/susy/pull/4329))
+  - Allow Portal to be used as top-level modal ([#4338](https://octonion.institute/susytech/susy/pull/4338))
+  - Portal
+  - Allow Portal to be used in as both top-level and popover
+  - Modal/popover variable naming
+  - Export Portal in ~/ui
+  - Properly handle optional onKeyDown
+  - Add simple Playground Example
+  - Add proper event listener to Portal ([#4359](https://octonion.institute/susytech/susy/pull/4359))
+  - Display AccountCard name via IdentityName ([#4235](https://octonion.institute/susytech/susy/pull/4235))
+  - Fix signing ([#4363](https://octonion.institute/susytech/susy/pull/4363))
+  - Dapp Account Selection & Defaults ([#4355](https://octonion.institute/susytech/susy/pull/4355))
+  - Add susy_defaultAccount RPC (with subscription) ([#4383](https://octonion.institute/susytech/susy/pull/4383))
+  - Default Account selector in Signer overlay ([#4375](https://octonion.institute/susytech/susy/pull/4375))
+  - Typo, fixes #4271 ([#4391](https://octonion.institute/susytech/susy/pull/4391))
+  - Fix SusyBar account selection overflows ([#4405](https://octonion.institute/susytech/susy/pull/4405))
+  - Available Dapp selection alignment with Permissions (Portal) ([#4374](https://octonion.institute/susytech/susy/pull/4374))
+  - Registry dapp: make lookup use lower case ([#4409](https://octonion.institute/susytech/susy/pull/4409))
+  - Dapps use defaultAccount instead of own selectors ([#4386](https://octonion.institute/susytech/susy/pull/4386))
+  - Poll for defaultAccount to update dapp & overlay subscriptions ([#4417](https://octonion.institute/susytech/susy/pull/4417))
+  - Poll for defaultAccount (Fixes #4413)
+  - Fix nextTimeout on catch
+  - Store timers
+  - Re-enable default updates on change detection
+  - Add block & timestamp conditions to Signer ([#4411](https://octonion.institute/susytech/susy/pull/4411))
+  - Extension installation overlay ([#4423](https://octonion.institute/susytech/susy/pull/4423))
+  - Extension installation overlay
+  - Pr gumbles
+  - Spelling
+  - Update Chrome URL
+  - Fix for non-included jsonrpc
+  - Extend Portal component (as per Modal) [#4392](https://octonion.institute/susytech/susy/pull/4392)
+- Transaction timestamp condition [#4427](https://octonion.institute/susytech/susy/pull/4427)
+- Fixing embedded bar not closing in chrome extension [#4421](https://octonion.institute/susytech/susy/pull/4421)
+- Backporting to beta [#4418](https://octonion.institute/susytech/susy/pull/4418)
+  - Bump to 1.5.1
+  - Disable notifications ([#4243](https://octonion.institute/susytech/susy/pull/4243))
+  - Fix wrong token handling ([#4254](https://octonion.institute/susytech/susy/pull/4254))
+  - Fixing wrong token displayed
+  - Linting
+  - Revert filtering out
+  - Revert the revert
+  - Don't panic on uknown git commit hash ([#4231](https://octonion.institute/susytech/susy/pull/4231))
+  - Additional logs for own transactions ([#4278](https://octonion.institute/susytech/susy/pull/4278))
+  - Integration with zgp whitelist contract ([#4215](https://octonion.institute/susytech/susy/pull/4215))
+  - Zgp-transactions checker
+  - Polishing
+  - Rename + refactor
+  - Refuse-service-transactions cl option
+  - Fixed tests compilation
+  - Renaming signAndSendTransaction to sendTransaction ([#4351](https://octonion.institute/susytech/susy/pull/4351))
+  - Fixed deadlock in external_url ([#4354](https://octonion.institute/susytech/susy/pull/4354))
+  - Fixing susyweb in console ([#4382](https://octonion.institute/susytech/susy/pull/4382))
+  - Fixing estimate gas in case histogram is not available ([#4387](https://octonion.institute/susytech/susy/pull/4387))
+  - Restarting fetch client every now and then ([#4399](https://octonion.institute/susytech/susy/pull/4399))
+- Embeddable SusyBar ([#4222](https://octonion.institute/susytech/susy/pull/4222)) [#4287](https://octonion.institute/susytech/susy/pull/4287)
+  - Embeddable SusyBar
+  - Replacing storage with store
+  - Fixing  references.
+  - Addressing style issues
+  - Supporting susy background
+
+## Susy [v1.5.0: "Nativity"](https://octonion.institute/susytech/susy/releases/tag/v1.5.0) (2017-01-19)
+
+Major feature release including _Tendermint_ consensus engine, _Multisig wallet_ support, _badge/certification_ UI integration and _automatic updates_.
+
+Directories:
+
+- New XDG-informed Susy data directory structure. Base dir (`--base-path` or `-d`) that defaulted to `$HOME/.susy` is changed to:
+  - `/Users/You/AppData/Roaming/Susy/Sophon` on Windows
+  - `/Users/you/Library/Application Support/io.susy.sophon` on MacOS
+  - `/home/you/.local/share/susy` on Linux/Unix
+- Keys are now stored in chain-specific directories . On first run of 1.5, all keys will be moved into the key's directory of the chain you run. You'll need to move the wallet files between directories manually if you wish to split them between testnet/mainnet.
+- `--db-path` option now controls the path just for the databases, not for keys (`--keys-path`) or dapps (`--dapps-path`).
+
+Basics:
+
+- Version tracking, consensus-protection, hypervised auto-updating:
+  - Susy will ensure syncing is paused if its version cannot support an upcoming hard-fork (disable with `--no-consensus`).
+  - Susy will automatically download the latest version and may be updated through Susy Wallet (disable with `--no-download`)
+  - Susy can automatically update and seamlessly restart to later versions in the same release track (enable with `--auto-update=all` or `--auto-update=critical`).
+  - Susy hypervisor will automatically run the latest version (disable with `--force-direct`).
+- Fat database; to enable, sync the chain with the option `--fat-db`.
+  - Accounts and storage entries can be enumerated.
+  - Chain state can be exported to JSON for analysis with `susy export state`.
+- CLI and config options renamed: all variants of `--signer` are renamed to `--ui`.
+- Log files are appended by default rather than truncated (useful for daemon deployments).
+
+Susy Wallet:
+
+- Multisig wallet support: "New Wallet" button in the "Accounts" section allows you to create a new multisig wallet or import an existing one.
+- Polynomial compiler: "Develop Contract" button in the "Contracts" section allows you to write, edit, compile and deploy contracts.
+- SMS & e-mail verification: Accounts can now be certified as verified using Susy's SMS and e-Mail verification/registration oracle.
+- Badge/certification integration: The `BadgeReg` contract can be used to deploy additional certifications.
+- Local transaction propagation tracking: "TxQueue Viewer" in the "Applications" section allows you to track and resubmit previously sent transactions.
+- Contract executions can now have gas and gas-price configured.
+- Signer can now alter the gas and gas-price of transactions at password-entry.
+- The deprecated Chrome "Signer" extension is now incompatible.
+
+[Proof of Authority](https://octonion.institute/susytech/susy/wiki/Proof-of-Authority-Chains):
+
+- Authority Round consensus engine: `engine: authorityRound {...}`; this is a high-performance Proof-of-Authority consensus engine. It is not BFT under normal circumstances (however the `--force-sealing` flag can be used to ensure consensus even with Byzantine nodes).
+- Tendermint Engine: `engine: tendermint {...}`; this is an experimental Proof-of-Authority consensus engine. BFT up to one third of the authorities and falling back to delayed finalization chain ordering (50% fault tolerant).
+- Generic seal JSON spec includes engine-specific types (`seal: { generic: { srlp: "0x..." } }` becomes `seal: { authority_round { step: 0, signature: "0x..." } }`.
+- To set a node as authority either `--engine-signer ADDRESS` should be used with `--password` or `susy_setEngineSigner(address, password)` RPC should be called. Unlocking the account permanently or using `--author` is now unnecessary.
+- Set of authorities can now be specified using a [list or a contract](https://octonion.institute/susytech/susy/wiki/Consensus-Engines#validator-engines).
+
+Chains:
+
+- Dev chain: `--chain=dev`; instant seal engine (no mining needed). Great for development work.
+- Ropsten chain (`--chain=ropsten` or `--chain=testnet`) configures for Ropsten, the new test net.
+- Morden chain (`--chain=morden`) changed to "Classic" rules and stays as the Sophon Classic test net.
+
+RPCs/APIs:
+
+- All JSON-RPC interfaces have strict JSON deserialization - no extra fields are allowed.
+- `sof_sign` RPC now hashes given data instead of getting the hash.
+- `signer_confirmRequestWithToken`: additional RPC for signing transactions with a rotating token, alleviating the need for keeping an account password in memory.
+- `sof_signTransaction` now conforms to the specification, `sof_submitTransaction` is introduced.
+
+Full changes:
+
+- Backporting to beta [#4211](https://octonion.institute/susytech/susy/pull/4211)
+  - JsonRPC bump for IPC fix
+  - Fixing sophyscan price parsing ([#4202](https://octonion.institute/susytech/susy/pull/4202))
+  - Handling all errors
+  - Fixed --base-path on windows ([#4193](https://octonion.institute/susytech/susy/pull/4193))
+  - Add support for optional args with default text
+  - Fixing minimal transaction queue price ([#4204](https://octonion.institute/susytech/susy/pull/4204))
+  - Fixing tests
+  - verification: add mainnet BadgeReg ids ([#4190](https://octonion.institute/susytech/susy/pull/4190))
+  - verification: fetch contracts by name
+  - verification: better wording
+  - typo
+  - reregistered badges
+  - Console now has admin ([#4220](https://octonion.institute/susytech/susy/pull/4220))
+  - Fixes [#4210](https://octonion.institute/susytech/susy/pull/4210)
+  - Non-secure for DappReg ([#4216](https://octonion.institute/susytech/susy/pull/4216))
+- Backporting to beta [#4203](https://octonion.institute/susytech/susy/pull/4203)
+  - Minor typo to ensure it updates only when synced. ([#4188](https://octonion.institute/susytech/susy/pull/4188))
+  - Updater fixes ([#4196](https://octonion.institute/susytech/susy/pull/4196))
+  - Minor typo to ensure it updates only when synced.
+  - Fix deadlock.
+  - Skip unneeded arg in making list.
+  - Allow auto-restart even when not running an update.
+  - Fix trace.
+  - Update update info on each loop.
+  - Fix build.
+  - Shutdown all sockets
+  - Remove superfluous use.
+  - Poll for upgrades as part of global status (long) ([#4197](https://octonion.institute/susytech/susy/pull/4197))
+  - Fix path
+  - Prevent duplicate incoming connections ([#4180](https://octonion.institute/susytech/susy/pull/4180))
+- Gas_limit for blocks, mined by Susy will be divisible by 37 ([#4154](https://octonion.institute/susytech/susy/pull/4154)) [#4176](https://octonion.institute/susytech/susy/pull/4176)
+  - gas_limit for new blocks will divide evenly by 13
+  - increased SUSY_GAS_LIMIT_DETERMINANT to 37
+  - separate method for marking mined block
+  - debug_asserts(gas_limit within protocol range)
+  - round_block_gas_limit method is now static
+  - made round_block_gas_limit free-function
+  - multiplier->multiple
+- Backporting to beta [#4175](https://octonion.institute/susytech/susy/pull/4175)
+  - verification: check if server is running ([#4140](https://octonion.institute/susytech/susy/pull/4140))
+  - verification: check if server is running
+  - See also sofcore/email-verification#67c6466 and sofcore/sms-verification#a585e42.
+  - verification: show in the UI if server is running
+  - verification: code style ✨, more i18n
+  - fix i18n key
+  - Optimized hash lookups ([#4144](https://octonion.institute/susytech/susy/pull/4144))
+  - Optimize hash comparison
+  - Use libc
+  - Ropsten fork detection ([#4163](https://octonion.institute/susytech/susy/pull/4163))
+  - Stop flickering + added loader in AddressSelector ([#4149](https://octonion.institute/susytech/susy/pull/4149))
+  - Stop UI flickering + added loader to AddressSelector [#4103](https://octonion.institute/susytech/susy/pull/4103)
+  - PR Grumbles
+  - Add a password strength component ([#4153](https://octonion.institute/susytech/susy/pull/4153))
+  - Added new PasswordStrength Component
+  - Added tests
+  - PR Grumbles
+  - icarus -> update, increase web timeout. ([#4165](https://octonion.institute/susytech/susy/pull/4165))
+  - Fix estimate gas
+  - Fix token images // Error in Contract Queries ([#4169](https://octonion.institute/susytech/susy/pull/4169))
+  - Fix dapps not loading ([#4170](https://octonion.institute/susytech/susy/pull/4170))
+  - Add secure to dappsreg
+  - Remove trailing slash // fix dapps
+- Bumping hyper [#4168](https://octonion.institute/susytech/susy/pull/4168)
+  - Bumping hyper
+  - Bumping again
+- Backporting to beta [#4158](https://octonion.institute/susytech/susy/pull/4158)
+  - Remove onSubmit of current (no auto-change on password edit) ([#4151](https://octonion.institute/susytech/susy/pull/4151))
+  - Remove onSubmit from current password
+  - Remove onSubmit from hint
+  - Pull in console dapp as builtin ([#4145](https://octonion.institute/susytech/susy/pull/4145))
+  - Copy static dapps from static (no build)
+  - Console sources
+  - Add console to builtins
+  - Remove console assets
+  - Disable eslint on console.js
+  - Enable eslint after disable
+  - Webpack copy
+- Backporting to beta [#4152](https://octonion.institute/susytech/susy/pull/4152)
+  - Fix broken transfer total balance ([#4127](https://octonion.institute/susytech/susy/pull/4127))
+  - Add proper label to method decoding inputs ([#4136](https://octonion.institute/susytech/susy/pull/4136))
+  - Another minor estimation fix ([#4133](https://octonion.institute/susytech/susy/pull/4133))
+  - Return 0 instead of error with out of gas on estimate_gas
+  - Fix stuff up.
+  - Another estimate gas fix.
+  - Alter balance to maximum possible rather than GP=0.
+  - Only increase to amount strictly necessary.
+  - Get rid of unsafe code in sofkey, propagate incorrect Secret errors. ([#4119](https://octonion.institute/susytech/susy/pull/4119))
+  - Implementing secret
+  - Fixing tests
+  - Refactor VoteCollector ([#4101](https://octonion.institute/susytech/susy/pull/4101))
+  - dir
+  - simple validator list
+  - stub validator contract
+  - make the engine hold Weak<Client> instead of IoChannel
+  - validator set factory
+  - register weak client with ValidatorContract
+  - check chain security
+  - add address array to generator
+  - register provider contract
+  - update validator set on notify
+  - add validator contract spec
+  - simple list test
+  - split update and contract test
+  - contract change
+  - use client in tendermint
+  - fix deadlock
+  - step duration in params
+  - adapt tendermint tests
+  - add storage fields to test spec
+  - constructor spec
+  - execute under wrong address
+  - create under correct address
+  - revert
+  - validator contract constructor
+  - move genesis block lookup
+  - add removal ability to contract
+  - validator contract adding validators
+  - fix basic authority
+  - validator changing test
+  - more docs
+  - update sync tests
+  - remove env_logger
+  - another env_logger
+  - cameltoe
+  - hold EngineClient instead of Client
+  - return error on misbehaviour
+  - nicer return
+  - sprinkle docs
+  - Reenable mainnet update server. ([#4137](https://octonion.institute/susytech/susy/pull/4137))
+  - basic tests for subscribeToEvents ([#4115](https://octonion.institute/susytech/susy/pull/4115))
+  - subscribeToEvent fixtures ✅
+  - subscribeToEvent tests ✅
+  - temporarily skip failing test ([#4138](https://octonion.institute/susytech/susy/pull/4138))
+  - Improvements and optimisations to estimate_gas ([#4142](https://octonion.institute/susytech/susy/pull/4142))
+  - Return 0 instead of error with out of gas on estimate_gas
+  - Fix stuff up.
+  - Another estimate gas fix.
+  - Alter balance to maximum possible rather than GP=0.
+  - Only increase to amount strictly necessary.
+  - Improvements and optimisations to estimate_gas.
+  - Introduce proper error type
+  - Avoid building costly traces
+  - Fix tests.
+  - Actually fix testsActually fix tests
+  - Use estimateGas error (as per updated implementation) ([#4131](https://octonion.institute/susytech/susy/pull/4131))
+  - EXCEPTION_ERROR as per #4142
+  - Better error log reporting & handling ([#4128](https://octonion.institute/susytech/susy/pull/4128))
+  - Don't pop-up notifications after network switch ([#4076](https://octonion.institute/susytech/susy/pull/4076))
+  - Better notifications
+  - Don't pollute with notifs if switched networks
+  - Better connection close/open events / No more notifs on change network
+  - PR Grumbles
+  - Add close and open events to HTTP // Add tests
+  - Fix tests
+  - WIP Signer Fix
+  - Fix Signer // Better reconnection handling
+  - PR Grumbles
+  - PR Grumbles
+  - Fixes wrong fetching of balances + Notifications
+  - Secure API WIP
+  - Updated Secure API Connection + Status
+  - Linting
+  - Updated Secure API Logic
+  - Proper handling of token updates // Fixing poping notifications
+  - PR Grumbles
+  - Fixing tests
+  - Trim spaces from InputAddress ([#4126](https://octonion.institute/susytech/susy/pull/4126))
+  - Trim spaces for addresses
+  - onSubmit has only value, not event
+  - onSubmit (again)
+  - Length check on trimmed value
+  - Remove bindActionCreators({}, dispatch) (empty) ([#4135](https://octonion.institute/susytech/susy/pull/4135))
+- Backporting to beta [#4118](https://octonion.institute/susytech/susy/pull/4118)
+  - Ignore get_price_info test by default. ([#4112](https://octonion.institute/susytech/susy/pull/4112))
+  - Auto-detect hex encoded bytes in sha3 ([#4108](https://octonion.institute/susytech/susy/pull/4108))
+  - Using types/isHex
+  - Removing unused imports
+  - Use binary chop to estimate gas accurately ([#4100](https://octonion.institute/susytech/susy/pull/4100))
+  - Initial sketch.
+  - Building.
+  - Fix a few things.
+  - Fix issue, add tracing.
+  - Address grumbles
+  - Raise upper limit if needed
+  - Fix test.
+  - Fixing decoding API with signatures in names ([#4125](https://octonion.institute/susytech/susy/pull/4125))
+  - Fix call/estimate_gas ([#4121](https://octonion.institute/susytech/susy/pull/4121))
+  - Return 0 instead of error with out of gas on estimate_gas
+  - Fix stuff up.
+- Current release: 1.3 -> 1.4 [#4183](https://octonion.institute/susytech/susy/pull/4183)
+- Fix rebroadcast panic [#4084](https://octonion.institute/susytech/susy/pull/4084)
+- Use shallow-only rendering in all tests [#4087](https://octonion.institute/susytech/susy/pull/4087)
+- Sending transactions in chunks [#4089](https://octonion.institute/susytech/susy/pull/4089)
+- Move to new auto-update server. [#4091](https://octonion.institute/susytech/susy/pull/4091)
+- Fixing compilation without dapps. [#4088](https://octonion.institute/susytech/susy/pull/4088)
+- Fix balances update [#4077](https://octonion.institute/susytech/susy/pull/4077)
+- Key derivation in Worker [#4071](https://octonion.institute/susytech/susy/pull/4071)
+- Display contract block creation [#4069](https://octonion.institute/susytech/susy/pull/4069)
+- Improving logs for transactions sync and disable re-broadcasting while syncing [#4065](https://octonion.institute/susytech/susy/pull/4065)
+- Passwords are valid by default [#4075](https://octonion.institute/susytech/susy/pull/4075)
+- Show Origin label to events table [#4073](https://octonion.institute/susytech/susy/pull/4073)
+- Fix tags not working [#4070](https://octonion.institute/susytech/susy/pull/4070)
+- Zero-alloc trie lookups [#3998](https://octonion.institute/susytech/susy/pull/3998)
+- Opening local dapp [#4041](https://octonion.institute/susytech/susy/pull/4041)
+- Bringing back `js-sha3` to fix in-browser signing [#4063](https://octonion.institute/susytech/susy/pull/4063)
+- Fix wrong transaction input for contract deployments [#4052](https://octonion.institute/susytech/susy/pull/4052)
+- Re-broadcast transactions to few random peers on each new block. [#4054](https://octonion.institute/susytech/susy/pull/4054)
+- Removing old transactions from the queue [#4046](https://octonion.institute/susytech/susy/pull/4046)
+- Add block rewards to more Engines [#4055](https://octonion.institute/susytech/susy/pull/4055)
+- Return old trie values on insert and remove [#4053](https://octonion.institute/susytech/susy/pull/4053)
+- Let users open urls from dapps view [#4042](https://octonion.institute/susytech/susy/pull/4042)
+- Util/validation update [#4051](https://octonion.institute/susytech/susy/pull/4051)
+- Convert ShapeShift modal to store [#4035](https://octonion.institute/susytech/susy/pull/4035)
+- Using local path on Windows [#4017](https://octonion.institute/susytech/susy/pull/4017)
+- Fixing minGasLimit > ceil limit mining issue [#4018](https://octonion.institute/susytech/susy/pull/4018)
+- Naive light client synchronization [#3892](https://octonion.institute/susytech/susy/pull/3892)
+- Starting on homestead shows reload snackbar [#4043](https://octonion.institute/susytech/susy/pull/4043)
+- Show contract parameters in MethodDecoding [#4024](https://octonion.institute/susytech/susy/pull/4024)
+- UI component updates [#4010](https://octonion.institute/susytech/susy/pull/4010)
+- Account view updates [#4008](https://octonion.institute/susytech/susy/pull/4008)
+- Better error messages for PoA chains [#4034](https://octonion.institute/susytech/susy/pull/4034)
+- Make some spec fields optional [#4019](https://octonion.institute/susytech/susy/pull/4019)
+- Basic account type [#4021](https://octonion.institute/susytech/susy/pull/4021)
+- Fix wallet in main net [#4038](https://octonion.institute/susytech/susy/pull/4038)
+- Removing orphaned Cargo.toml [#4032](https://octonion.institute/susytech/susy/pull/4032)
+- Address selector: support reverse lookup [#4033](https://octonion.institute/susytech/susy/pull/4033)
+- Only fetch App when necessary [#4023](https://octonion.institute/susytech/susy/pull/4023)
+- Connection UI cleanups & tests for prior PR [#4020](https://octonion.institute/susytech/susy/pull/4020)
+- Unsubscribe error on ShapeShift modal close [#4005](https://octonion.institute/susytech/susy/pull/4005)
+- Add ownership checks the Registry dApp [#4001](https://octonion.institute/susytech/susy/pull/4001)
+- Refresh balances of contacts & contracts when syncing [#4022](https://octonion.institute/susytech/susy/pull/4022)
+- Show message on new chain [#4016](https://octonion.institute/susytech/susy/pull/4016)
+- Use TypedInputs in Contracts view [#4015](https://octonion.institute/susytech/susy/pull/4015)
+- Fix focus on Modal [#4014](https://octonion.institute/susytech/susy/pull/4014)
+- Fix newError noops when not bound to dispacher [#4013](https://octonion.institute/susytech/susy/pull/4013)
+- Parse testnet chain as ropsten [#4004](https://octonion.institute/susytech/susy/pull/4004)
+- Work on Portal Style [#4003](https://octonion.institute/susytech/susy/pull/4003)
+- Make Wallet first-class citizens [#3990](https://octonion.institute/susytech/susy/pull/3990)
+- Don't slice non-existent tags [#4000](https://octonion.institute/susytech/susy/pull/4000)
+- Update dev dependencies and make Webpack less verbose [#3997](https://octonion.institute/susytech/susy/pull/3997)
+- Correct log index in transaction receipt [#3995](https://octonion.institute/susytech/susy/pull/3995)
+- Add Email and Registry lookups to Address Selector [#3992](https://octonion.institute/susytech/susy/pull/3992)
+- Remove node journal: dead code [#3994](https://octonion.institute/susytech/susy/pull/3994)
+- Cleanup AddContract with store [#3981](https://octonion.institute/susytech/susy/pull/3981)
+- Store for EditPassword Modal [#3979](https://octonion.institute/susytech/susy/pull/3979)
+- Additional fetch tests [#3983](https://octonion.institute/susytech/susy/pull/3983)
+- Owning views of blockchain data [#3982](https://octonion.institute/susytech/susy/pull/3982)
+- Make test network generic over peer type [#3974](https://octonion.institute/susytech/susy/pull/3974)
+- Fetch tests (first batch) [#3977](https://octonion.institute/susytech/susy/pull/3977)
+- Fetch certifiers only when needed [#3978](https://octonion.institute/susytech/susy/pull/3978)
+- Visible accounts for dapps (default whitelist) [#3898](https://octonion.institute/susytech/susy/pull/3898)
+- Remove some old (unused/duplicate) files [#3975](https://octonion.institute/susytech/susy/pull/3975)
+- Port `try` macro to new `?` operator. [#3962](https://octonion.institute/susytech/susy/pull/3962)
+- Small UI fixes [#3966](https://octonion.institute/susytech/susy/pull/3966)
+- Fix wrong use of Icons [#3973](https://octonion.institute/susytech/susy/pull/3973)
+- Updating dependencies [#3968](https://octonion.institute/susytech/susy/pull/3968)
+- Web Based Dapps [#3956](https://octonion.institute/susytech/susy/pull/3956)
+- Contract query: render false as false [#3971](https://octonion.institute/susytech/susy/pull/3971)
+- Email verification: add Terms of Service [#3970](https://octonion.institute/susytech/susy/pull/3970)
+- Fix method decoding [#3967](https://octonion.institute/susytech/susy/pull/3967)
+- Store for EditMeta modal [#3959](https://octonion.institute/susytech/susy/pull/3959)
+- Registry dapp: cleanup, support reverse entries [#3933](https://octonion.institute/susytech/susy/pull/3933)
+- New Address Selector Component [#3829](https://octonion.institute/susytech/susy/pull/3829)
+- Limiting accounts returned by susy_accountInfo [#3931](https://octonion.institute/susytech/susy/pull/3931)
+- Unknown block error for RPC [#3965](https://octonion.institute/susytech/susy/pull/3965)
+- Remove unused fields in informant [#3963](https://octonion.institute/susytech/susy/pull/3963)
+- Allow contract constructors in chain spec [#3932](https://octonion.institute/susytech/susy/pull/3932)
+- Sync reorg up to history size [#3874](https://octonion.institute/susytech/susy/pull/3874)
+- Rising the limit for fetch [#3964](https://octonion.institute/susytech/susy/pull/3964)
+- Bring integer arithmetic up to crates.io [#3943](https://octonion.institute/susytech/susy/pull/3943)
+- Eslint rule for block curlies [#3955](https://octonion.institute/susytech/susy/pull/3955)
+- Gas exception warnings on deployment [#3938](https://octonion.institute/susytech/susy/pull/3938)
+- Move verification store into modal [#3951](https://octonion.institute/susytech/susy/pull/3951)
+- Allow setting of minBlock on sending [#3921](https://octonion.institute/susytech/susy/pull/3921)
+- Allow empty address [#3961](https://octonion.institute/susytech/susy/pull/3961)
+- Fix default import [#3960](https://octonion.institute/susytech/susy/pull/3960)
+- Display 0x00..00 as null [#3950](https://octonion.institute/susytech/susy/pull/3950)
+- Global Fetch Service [#3915](https://octonion.institute/susytech/susy/pull/3915)
+- Update babel-loader for WebPack 2.2-rc [#3953](https://octonion.institute/susytech/susy/pull/3953)
+- Fix Webpack build [#3946](https://octonion.institute/susytech/susy/pull/3946)
+- Fix manual input token [#3945](https://octonion.institute/susytech/susy/pull/3945)
+- Update Webpack [#3952](https://octonion.institute/susytech/susy/pull/3952)
+- Add missing Sofcore -> Susy headers [#3948](https://octonion.institute/susytech/susy/pull/3948)
+- Code example: do start before register_protocol [#3947](https://octonion.institute/susytech/susy/pull/3947)
+- Set CHAIN_ID for Classic [#3934](https://octonion.institute/susytech/susy/pull/3934)
+- Fixed compile error. [#3940](https://octonion.institute/susytech/susy/pull/3940)
+- Fix dapps not loading [#3935](https://octonion.institute/susytech/susy/pull/3935)
+- Fix Secure API hangs [#3927](https://octonion.institute/susytech/susy/pull/3927)
+- Susy_chainStatus RPC for block gap info [#3899](https://octonion.institute/susytech/susy/pull/3899)
+- Custom attribute for binary serialization  [#3922](https://octonion.institute/susytech/susy/pull/3922)
+- Split intermediate stage into two. [#3926](https://octonion.institute/susytech/susy/pull/3926)
+- Move release-registering to intermediate stage. [#3920](https://octonion.institute/susytech/susy/pull/3920)
+- Blocktime format rounding [#3894](https://octonion.institute/susytech/susy/pull/3894)
+- Ignore dapps_policy.json [#3919](https://octonion.institute/susytech/susy/pull/3919)
+- Fixing Contract Development [#3912](https://octonion.institute/susytech/susy/pull/3912)
+- Use rhash for non-native CI platforms and submit build. [#3911](https://octonion.institute/susytech/susy/pull/3911)
+- Remove -Zorbit=off from rustflags on windows [#3907](https://octonion.institute/susytech/susy/pull/3907)
+- Fixed upgrading keys on the first run [#3904](https://octonion.institute/susytech/susy/pull/3904)
+- Fix deadlock in queue drop [#3903](https://octonion.institute/susytech/susy/pull/3903)
+- Require only simpler methods on Provider [#3897](https://octonion.institute/susytech/susy/pull/3897)
+- Fix grammar ("you try" -> "you tried" + article) [#3902](https://octonion.institute/susytech/susy/pull/3902)
+- Remove light server capability temporarily [#3872](https://octonion.institute/susytech/susy/pull/3872)
+- Allow retry for future blocks [#3896](https://octonion.institute/susytech/susy/pull/3896)
+- Consistent engine and seal names [#3895](https://octonion.institute/susytech/susy/pull/3895)
+- Update email certification ABI [#3893](https://octonion.institute/susytech/susy/pull/3893)
+- Remove existence & length checks on passwords & phrases [#3854](https://octonion.institute/susytech/susy/pull/3854)
+- Refresh certifications automatically [#3878](https://octonion.institute/susytech/susy/pull/3878)
+- Fix Wallet Settings Modal [#3856](https://octonion.institute/susytech/susy/pull/3856)
+- Fix difficulty adjustment. [#3884](https://octonion.institute/susytech/susy/pull/3884)
+- Final fixups for updater [#3883](https://octonion.institute/susytech/susy/pull/3883)
+- Attempt to fix windows CI. [#3882](https://octonion.institute/susytech/susy/pull/3882)
+- Fixing racy test [#3881](https://octonion.institute/susytech/susy/pull/3881)
+- Fix updater permissions [#3880](https://octonion.institute/susytech/susy/pull/3880)
+- Delayed transactions [#3865](https://octonion.institute/susytech/susy/pull/3865)
+- Don't log auth token [#3853](https://octonion.institute/susytech/susy/pull/3853)
+- Loading default config from default path [#3875](https://octonion.institute/susytech/susy/pull/3875)
+- New paths [#3877](https://octonion.institute/susytech/susy/pull/3877)
+- Update tests, gitlabci [#3876](https://octonion.institute/susytech/susy/pull/3876)
+- Base directory option [#3868](https://octonion.institute/susytech/susy/pull/3868)
+- Auto-updating [#3505](https://octonion.institute/susytech/susy/pull/3505)
+- Fix naming collision [#3873](https://octonion.institute/susytech/susy/pull/3873)
+- Get rid of unecessary redirection while fetching content [#3858](https://octonion.institute/susytech/susy/pull/3858)
+- Fix verification stores [#3864](https://octonion.institute/susytech/susy/pull/3864)
+- Store subscriptionId, align with main subscription model [#3863](https://octonion.institute/susytech/susy/pull/3863)
+- Additional RPCs for dapps accounts management [#3792](https://octonion.institute/susytech/susy/pull/3792)
+- Add Ws Json rpc client and command line utils (take 2) [#3830](https://octonion.institute/susytech/susy/pull/3830)
+- Fix typo in method call (broken contract interface) [#3862](https://octonion.institute/susytech/susy/pull/3862)
+- Fix flaky test [#3860](https://octonion.institute/susytech/susy/pull/3860)
+- Converting traces API to AutoArgs [#3844](https://octonion.institute/susytech/susy/pull/3844)
+- Get certifications from BadgeReg, show them in accounts overview [#3768](https://octonion.institute/susytech/susy/pull/3768)
+- New directory structure [#3828](https://octonion.institute/susytech/susy/pull/3828)
+- First run: skip account creation if they already have accounts [#3827](https://octonion.institute/susytech/susy/pull/3827)
+- Tendermint seal [#3857](https://octonion.institute/susytech/susy/pull/3857)
+- Tendermint Engine [#3759](https://octonion.institute/susytech/susy/pull/3759)
+- Expand lint to catch css issues [#3852](https://octonion.institute/susytech/susy/pull/3852)
+- Inject exports both partiy & susyweb [#3851](https://octonion.institute/susytech/susy/pull/3851)
+- Let Webpack talk again [#3848](https://octonion.institute/susytech/susy/pull/3848)
+- AuthorityRound seal and simplify Generic seal Spec [#3843](https://octonion.institute/susytech/susy/pull/3843)
+- Signing transactions with rotating token [#3691](https://octonion.institute/susytech/susy/pull/3691)
+- Bump dev chain [#3835](https://octonion.institute/susytech/susy/pull/3835)
+- Spelling [#3839](https://octonion.institute/susytech/susy/pull/3839)
+- Email verification [#3766](https://octonion.institute/susytech/susy/pull/3766)
+- Network configuration for Sophon Classic [#3812](https://octonion.institute/susytech/susy/pull/3812)
+- Using susy-jsonrpc-macros [#3831](https://octonion.institute/susytech/susy/pull/3831)
+- Fixed bool dropdown in contract execution [#3823](https://octonion.institute/susytech/susy/pull/3823)
+- Avoid broadcasting transactions to peers that send them [#3796](https://octonion.institute/susytech/susy/pull/3796)
+- Sof_sign RPC now hashes given data instead of getting the hash [#3800](https://octonion.institute/susytech/susy/pull/3800)
+- Add store for MethodDecoding [#3821](https://octonion.institute/susytech/susy/pull/3821)
+- Add store for AddAddress [#3819](https://octonion.institute/susytech/susy/pull/3819)
+- Fix React-Router in i18n locale change [#3815](https://octonion.institute/susytech/susy/pull/3815)
+- Cache fetched Dapps [#3804](https://octonion.institute/susytech/susy/pull/3804)
+- Authors & homepage => Susy [#3818](https://octonion.institute/susytech/susy/pull/3818)
+- Rename Sofcore -> Susy Technologies [#3817](https://octonion.institute/susytech/susy/pull/3817)
+- Allow editing of gasPrice & gas in Signer [#3777](https://octonion.institute/susytech/susy/pull/3777)
+- I18n string dictionaries [#3532](https://octonion.institute/susytech/susy/pull/3532)
+- Fix padding in App [#3813](https://octonion.institute/susytech/susy/pull/3813)
+- Light server improvements and protocol adjustments [#3801](https://octonion.institute/susytech/susy/pull/3801)
+- Tolerate errors in user_defaults [#3810](https://octonion.institute/susytech/susy/pull/3810)
+- Block: enforce gas limit falls within engine bounds [#3809](https://octonion.institute/susytech/susy/pull/3809)
+- Target Babel to latest Chrome Versions in dev [#3806](https://octonion.institute/susytech/susy/pull/3806)
+- Lowercase npm packages [#3807](https://octonion.institute/susytech/susy/pull/3807)
+- Extended publishing of libraries to npm [#3786](https://octonion.institute/susytech/susy/pull/3786)
+- Several Fixes to the UI [#3799](https://octonion.institute/susytech/susy/pull/3799)
+- Remove "s [#3805](https://octonion.institute/susytech/susy/pull/3805)
+- Extract CSS to file in production builds [#3783](https://octonion.institute/susytech/susy/pull/3783)
+- Notify user on transaction received [#3782](https://octonion.institute/susytech/susy/pull/3782)
+- Removing all old entries from transaction queue [#3772](https://octonion.institute/susytech/susy/pull/3772)
+- Status page updates [#3774](https://octonion.institute/susytech/susy/pull/3774)
+- Allow modifications of gas when confirming in signer [#3798](https://octonion.institute/susytech/susy/pull/3798)
+- Network connectivity fixes [#3794](https://octonion.institute/susytech/susy/pull/3794)
+- Make *ID names consistent with std Rust (Id) [#3781](https://octonion.institute/susytech/susy/pull/3781)
+- Update CI builds [#3780](https://octonion.institute/susytech/susy/pull/3780)
+- Update AuthorityRound tests to new spec [#3790](https://octonion.institute/susytech/susy/pull/3790)
+- Fixes to the Wallet UI [#3787](https://octonion.institute/susytech/susy/pull/3787)
+- Add support for wallets without getOwner() interface [#3779](https://octonion.institute/susytech/susy/pull/3779)
+- Update Material-UI [#3785](https://octonion.institute/susytech/susy/pull/3785)
+- Fixes error in Transfer modal [#3788](https://octonion.institute/susytech/susy/pull/3788)
+- LES Part 3: Event handlers and handling responses [#3755](https://octonion.institute/susytech/susy/pull/3755)
+- Basic UI rendering tests [#3743](https://octonion.institute/susytech/susy/pull/3743)
+- Network: process packets only after connection handler finishes [#3776](https://octonion.institute/susytech/susy/pull/3776)
+- AuthorityRound network simulation test [#3778](https://octonion.institute/susytech/susy/pull/3778)
+- GasPrice selection for contract execution [#3770](https://octonion.institute/susytech/susy/pull/3770)
+- Reject existing transactions [#3762](https://octonion.institute/susytech/susy/pull/3762)
+- Allow autoRemove from api.subscribe based on callback return values [#3752](https://octonion.institute/susytech/susy/pull/3752)
+- Replace misplaced & with && in gitlab-ci.yml [#3753](https://octonion.institute/susytech/susy/pull/3753)
+- Lower gas usage for creating a Multisig Wallet [#3773](https://octonion.institute/susytech/susy/pull/3773)
+- Added IO service explicit stop [#3761](https://octonion.institute/susytech/susy/pull/3761)
+- Be lenient around invalid owners map [#3764](https://octonion.institute/susytech/susy/pull/3764)
+- GasEditor component [#3750](https://octonion.institute/susytech/susy/pull/3750)
+- Cleanups [#3742](https://octonion.institute/susytech/susy/pull/3742)
+- Update babel, fix CI build due to breaking changes [#3754](https://octonion.institute/susytech/susy/pull/3754)
+- Small fixes to contract [#3751](https://octonion.institute/susytech/susy/pull/3751)
+- Make engine hold AccountProvider [#3725](https://octonion.institute/susytech/susy/pull/3725)
+- Properly delete addresses/contracts in addressbook [#3739](https://octonion.institute/susytech/susy/pull/3739)
+- Display Wallet Owners Icons in Accounts list [#3741](https://octonion.institute/susytech/susy/pull/3741)
+- Edit Multisig Wallet settings [#3740](https://octonion.institute/susytech/susy/pull/3740)
+- Replace build directory completely [#3748](https://octonion.institute/susytech/susy/pull/3748)
+- Add existing release files before merge [#3747](https://octonion.institute/susytech/susy/pull/3747)
+- Release script back to using fetch/merge [#3746](https://octonion.institute/susytech/susy/pull/3746)
+- Update with -X only for merge [#3745](https://octonion.institute/susytech/susy/pull/3745)
+- Give accounts precedence over address_book entries [#3732](https://octonion.institute/susytech/susy/pull/3732)
+- Enable Panic=abort [#3423](https://octonion.institute/susytech/susy/pull/3423)
+- Cleanups on js-precompiled [#3738](https://octonion.institute/susytech/susy/pull/3738)
+- Add susy_removeAddress RPC [#3735](https://octonion.institute/susytech/susy/pull/3735)
+- Fix up the transaction JSON serialisation for RPC. [#3633](https://octonion.institute/susytech/susy/pull/3633)
+- Queue: CLI for auto-scaling and num verifiers [#3709](https://octonion.institute/susytech/susy/pull/3709)
+- Add functionalities to multi-sig wallet [#3729](https://octonion.institute/susytech/susy/pull/3729)
+- PropTypes as function call [#3731](https://octonion.institute/susytech/susy/pull/3731)
+- Unify proptypes in util/proptypes.js [#3728](https://octonion.institute/susytech/susy/pull/3728)
+- Bump susy-jsonrpc-ipc-server to fix windows build [#3730](https://octonion.institute/susytech/susy/pull/3730)
+- LES Part 2 [#3527](https://octonion.institute/susytech/susy/pull/3527)
+- First draft of the MultiSig Wallet [#3700](https://octonion.institute/susytech/susy/pull/3700)
+- Engine block ordering [#3719](https://octonion.institute/susytech/susy/pull/3719)
+- Use fdlimit utility crate from crates.io [#3716](https://octonion.institute/susytech/susy/pull/3716)
+- Move decoding for contract deployment logic earlier [#3714](https://octonion.institute/susytech/susy/pull/3714)
+- Possible fix for queue drop deadlock [#3702](https://octonion.institute/susytech/susy/pull/3702)
+- Encode networkid as a u64. [#3713](https://octonion.institute/susytech/susy/pull/3713)
+- Use valid SRLP in generic genesis seal spec [#3717](https://octonion.institute/susytech/susy/pull/3717)
+- Update JS dependencies [#3710](https://octonion.institute/susytech/susy/pull/3710)
+- Use Webpack Aliases [#3711](https://octonion.institute/susytech/susy/pull/3711)
+- Dapps-specific accounts [#3627](https://octonion.institute/susytech/susy/pull/3627)
+- Signer method parameter decoding & destination info [#3671](https://octonion.institute/susytech/susy/pull/3671)
+- Remove invalid slice test [#3712](https://octonion.institute/susytech/susy/pull/3712)
+- React library update [#3704](https://octonion.institute/susytech/susy/pull/3704)
+- New Loading Component for the UI [#3707](https://octonion.institute/susytech/susy/pull/3707)
+- Refactoring Transfer Modal [#3705](https://octonion.institute/susytech/susy/pull/3705)
+- Fix extra scrollbars in dapps [#3706](https://octonion.institute/susytech/susy/pull/3706)
+- Indent state tests [#3431](https://octonion.institute/susytech/susy/pull/3431)
+- Filter null transactions for display (not available on node) [#3698](https://octonion.institute/susytech/susy/pull/3698)
+- Move recovery phrase print button [#3697](https://octonion.institute/susytech/susy/pull/3697)
+- Fix padding bottom needed after fixed status [#3701](https://octonion.institute/susytech/susy/pull/3701)
+- Don't share the snapshot while downloading old blocks [#3695](https://octonion.institute/susytech/susy/pull/3695)
+- Button to print recovery phrase [#3694](https://octonion.institute/susytech/susy/pull/3694)
+- Fix status bar to bottom of the screen [#3692](https://octonion.institute/susytech/susy/pull/3692)
+- Splitting serialization of signTransaction and sendTransaction confirmation requests [#3642](https://octonion.institute/susytech/susy/pull/3642)
+- Implement basic badges/certifications/flair [#3665](https://octonion.institute/susytech/susy/pull/3665)
+- Simplify Container title rendering [#3680](https://octonion.institute/susytech/susy/pull/3680)
+- Update loading splash to fit in with l&f [#3685](https://octonion.institute/susytech/susy/pull/3685)
+- Safari UI fixes [#3678](https://octonion.institute/susytech/susy/pull/3678)
+- Remove strict mode for DappReg (work-around for package upgrade) [#3681](https://octonion.institute/susytech/susy/pull/3681)
+- Bumping clippy [#3654](https://octonion.institute/susytech/susy/pull/3654)
+- Return of the Fat DB [#3636](https://octonion.institute/susytech/susy/pull/3636)
+- Invalidate blocks from future [#3652](https://octonion.institute/susytech/susy/pull/3652)
+- Make Modal always scrollable [#3667](https://octonion.institute/susytech/susy/pull/3667)
+- Display local/completed transactions [#3630](https://octonion.institute/susytech/susy/pull/3630)
+- Added build-essential dep to dockerfiles [#3666](https://octonion.institute/susytech/susy/pull/3666)
+- Strict config parsing (uknown keys are rejected) [#3663](https://octonion.institute/susytech/susy/pull/3663)
+- Strict deserialization [#3662](https://octonion.institute/susytech/susy/pull/3662)
+- Disable peer if no common block found [#3655](https://octonion.institute/susytech/susy/pull/3655)
+- Show snackbar on password change [#3661](https://octonion.institute/susytech/susy/pull/3661)
+- Bring back PV62 support [#3660](https://octonion.institute/susytech/susy/pull/3660)
+- Unlock expecting quantity [#3659](https://octonion.institute/susytech/susy/pull/3659)
+- Update Webpack => v2 [#3643](https://octonion.institute/susytech/susy/pull/3643)
+- Update SMS verification [#3579](https://octonion.institute/susytech/susy/pull/3579)
+- Simplify tx confirmations display [#3559](https://octonion.institute/susytech/susy/pull/3559)
+- Fixes overflow in Signer tx data [#3657](https://octonion.institute/susytech/susy/pull/3657)
+- Fixed tab bar not updating [#3653](https://octonion.institute/susytech/susy/pull/3653)
+- Set default min tx price to $0.0025 [#3617](https://octonion.institute/susytech/susy/pull/3617)
+- Use accountsInfo instead of sof_accounts for first check [#3618](https://octonion.institute/susytech/susy/pull/3618)
+- Fix Copy to Clipboard Snackbar [#3619](https://octonion.institute/susytech/susy/pull/3619)
+- Manually add \r to Windows phrases pre 1.4.5 [#3615](https://octonion.institute/susytech/susy/pull/3615)
+- Signer layouts to flexbox [#3600](https://octonion.institute/susytech/susy/pull/3600)
+- Fixing wrong tokens type in Redux store [#3621](https://octonion.institute/susytech/susy/pull/3621)
+- Add dappreg link to apps list [#3568](https://octonion.institute/susytech/susy/pull/3568)
+- Smarter balance fetching [#3605](https://octonion.institute/susytech/susy/pull/3605)
+- Dapp iframe allow forms, allow target=_blank [#3597](https://octonion.institute/susytech/susy/pull/3597)
+- Align copy button to input field [#3604](https://octonion.institute/susytech/susy/pull/3604)
+- Appending logs by default [#3609](https://octonion.institute/susytech/susy/pull/3609)
+- Update test, fix number. [#3612](https://octonion.institute/susytech/susy/pull/3612)
+- Fixing phrases generated on windows [#3614](https://octonion.institute/susytech/susy/pull/3614)
+- Check for network ID for live/test matching [#3602](https://octonion.institute/susytech/susy/pull/3602)
+- Always insert traces for genesis. [#3603](https://octonion.institute/susytech/susy/pull/3603)
+- Real deleting accounts [#3540](https://octonion.institute/susytech/susy/pull/3540)
+- Trim whitespace from input recovery phrase [#3599](https://octonion.institute/susytech/susy/pull/3599)
+- Fix local tx requests  [#3589](https://octonion.institute/susytech/susy/pull/3589)
+- Fix CPU usage when idle [#3592](https://octonion.institute/susytech/susy/pull/3592)
+- Don't fetch balances on every new block if syncing [#3591](https://octonion.institute/susytech/susy/pull/3591)
+- Work around WS in UI [#3587](https://octonion.institute/susytech/susy/pull/3587)
+- CLI option to disable ancient block downloading [#3573](https://octonion.institute/susytech/susy/pull/3573)
+- Move Signer balance queries to store for component-wide re-use [#3531](https://octonion.institute/susytech/susy/pull/3531)
+- Fix wrong method name in `contract.js` [#3580](https://octonion.institute/susytech/susy/pull/3580)
+- Smarter Tokens fetching [#3546](https://octonion.institute/susytech/susy/pull/3546)
+- Fix panic on importing own invalid transaction [#3550](https://octonion.institute/susytech/susy/pull/3550)
+- Use an adaptive number of threads in the verification queue [#2445](https://octonion.institute/susytech/susy/pull/2445)
+- Faster UI - React Tweaks [#3555](https://octonion.institute/susytech/susy/pull/3555)
+- Send value & contract execute gas limit warnings [#3512](https://octonion.institute/susytech/susy/pull/3512)
+- Add TxQueue visibility specifier (not added between merges) [#3566](https://octonion.institute/susytech/susy/pull/3566)
+- DappRegistry [#3405](https://octonion.institute/susytech/susy/pull/3405)
+- Import account message [#3552](https://octonion.institute/susytech/susy/pull/3552)
+- --testnet set to ropsten [#3551](https://octonion.institute/susytech/susy/pull/3551)
+- Fix flaky test [#3547](https://octonion.institute/susytech/susy/pull/3547)
+- Sms verification code style [#3564](https://octonion.institute/susytech/susy/pull/3564)
+- [Registry] Clear input and working buttons [#3563](https://octonion.institute/susytech/susy/pull/3563)
+- Fix peers not displaying [#3561](https://octonion.institute/susytech/susy/pull/3561)
+- New registry contract address for ropsten [#3549](https://octonion.institute/susytech/susy/pull/3549)
+- Use contract Registry fee, not a hard-coded value [#3554](https://octonion.institute/susytech/susy/pull/3554)
+- Don't query chain in Signer, use Redux isTest [#3524](https://octonion.institute/susytech/susy/pull/3524)
+- Moving fetching of hash-addressed dapps/content to separate crate. [#3543](https://octonion.institute/susytech/susy/pull/3543)
+- Ropsten network [#3539](https://octonion.institute/susytech/susy/pull/3539)
+- Add simple one-line installer to README.md [#3534](https://octonion.institute/susytech/susy/pull/3534)
+- Propagations & local transactions tracking [#3491](https://octonion.institute/susytech/susy/pull/3491)
+- Correct format of sof_signTransaction [#3503](https://octonion.institute/susytech/susy/pull/3503)
+- ABI can be empty and auto-fill contract name [#3518](https://octonion.institute/susytech/susy/pull/3518)
+- Fix versions for NPM [#3516](https://octonion.institute/susytech/susy/pull/3516)
+- Better GHH event display & tracking [#3498](https://octonion.institute/susytech/susy/pull/3498)
+- Dapp section & visibility changes [#3438](https://octonion.institute/susytech/susy/pull/3438)
+- Fix susy.js badly built [#3526](https://octonion.institute/susytech/susy/pull/3526)
+- Updated the european warp bootnode addresses [#3528](https://octonion.institute/susytech/susy/pull/3528)
+- Limit sync reorg to 20 blocks [#3519](https://octonion.institute/susytech/susy/pull/3519)
+- Revert "Limit sync reorganization to 20 blocks" [#3517](https://octonion.institute/susytech/susy/pull/3517)
+- Check transaction signature when adding to the queue [#3508](https://octonion.institute/susytech/susy/pull/3508)
+- Limit sync reorganization to 20 blocks [#3509](https://octonion.institute/susytech/susy/pull/3509)
+- Keep track of block gasLimit [#3506](https://octonion.institute/susytech/susy/pull/3506)
+- Smarter Status Polling [#3504](https://octonion.institute/susytech/susy/pull/3504)
+- Handle polc combined output [#3496](https://octonion.institute/susytech/susy/pull/3496)
+- Wallet names shouldn't use UUID [#3481](https://octonion.institute/susytech/susy/pull/3481)
+- Make susy.js usable by Node and Browser [#3475](https://octonion.institute/susytech/susy/pull/3475)
+- Sms verification modal [#3336](https://octonion.institute/susytech/susy/pull/3336)
+- Sudo -c is not supported on Mac [#3488](https://octonion.institute/susytech/susy/pull/3488)
+- Add trace_{call, rawTransaction, replayTransaction} [#3492](https://octonion.institute/susytech/susy/pull/3492)
+- Check for possible panics in scrypt key derivation [#3490](https://octonion.institute/susytech/susy/pull/3490)
+- Sync traffic optimization [#3477](https://octonion.institute/susytech/susy/pull/3477)
+- Wallet files shouldn't give away the address [#3378](https://octonion.institute/susytech/susy/pull/3378)
+- Fixing tests, fixing refreshing precompiled [#3483](https://octonion.institute/susytech/susy/pull/3483)
+- Better Errors Snackbar in UI [#3478](https://octonion.institute/susytech/susy/pull/3478)
+- Handle Signer Rejection [#3476](https://octonion.institute/susytech/susy/pull/3476)
+- Enhanced MethodDecoding in Transactions list [#3454](https://octonion.institute/susytech/susy/pull/3454)
+- Signer new-token generates a link and opens browser [#3379](https://octonion.institute/susytech/susy/pull/3379)
+- Make tokenreg dapp fast again [#3474](https://octonion.institute/susytech/susy/pull/3474)
+- Build fix [#3470](https://octonion.institute/susytech/susy/pull/3470)
+- Display deployed Basic token addresses [#3447](https://octonion.institute/susytech/susy/pull/3447)
+- Export accounts as JSON or CSV [#2866](https://octonion.institute/susytech/susy/pull/2866)
+- Set HF2 block number [#3466](https://octonion.institute/susytech/susy/pull/3466)
+- Better word list for secret phrase generation [#3461](https://octonion.institute/susytech/susy/pull/3461)
+- Drop spec when no longer useful [#3460](https://octonion.institute/susytech/susy/pull/3460)
+- Add fallback check in ABI validation [#3459](https://octonion.institute/susytech/susy/pull/3459)
+- Save sort order in LocalStorage [#3457](https://octonion.institute/susytech/susy/pull/3457)
+- Adds onPaste event to Inputs [#3456](https://octonion.institute/susytech/susy/pull/3456)
+- Update signer to take care of text overflows [#3450](https://octonion.institute/susytech/susy/pull/3450)
+- Authority round consensus engine [#3426](https://octonion.institute/susytech/susy/pull/3426)
+- Fix transfer token decimal calculation [#3445](https://octonion.institute/susytech/susy/pull/3445)
+- Restrict max code size for SIP-150 and after. [#3363](https://octonion.institute/susytech/susy/pull/3363)
+- Contract queries should display IdentityIcons [#3453](https://octonion.institute/susytech/susy/pull/3453)
+- Use Babel in vendor when needed [#3451](https://octonion.institute/susytech/susy/pull/3451)
+- Use signature of functions instead of names [#3448](https://octonion.institute/susytech/susy/pull/3448)
+- Handle contract constructor inputs [#3430](https://octonion.institute/susytech/susy/pull/3430)
+- Use Contract owner for unregistering Token [#3446](https://octonion.institute/susytech/susy/pull/3446)
+- Create directories only if feature is enabled [#3442](https://octonion.institute/susytech/susy/pull/3442)
+- Import AddresBook from exported JSON [#3433](https://octonion.institute/susytech/susy/pull/3433)
+- Scrollable accounts in autocomplete [#3427](https://octonion.institute/susytech/susy/pull/3427)
+- Bump ws-rs [#3428](https://octonion.institute/susytech/susy/pull/3428)
+- Swap TokenReg dapp from base to decimals [#3425](https://octonion.institute/susytech/susy/pull/3425)
+- Change beta builds to stable on Travis [#3421](https://octonion.institute/susytech/susy/pull/3421)
+- Refactor copy to clipboard functionality [#3420](https://octonion.institute/susytech/susy/pull/3420)
+- Dev chain [#3385](https://octonion.institute/susytech/susy/pull/3385)
+- Fetch known code from the database during restoration [#3377](https://octonion.institute/susytech/susy/pull/3377)
+- Fixing benches [#3422](https://octonion.institute/susytech/susy/pull/3422)
+- Fix chainspec storage field. [#3406](https://octonion.institute/susytech/susy/pull/3406)
+- Abort snapshot restoration faster [#3356](https://octonion.institute/susytech/susy/pull/3356)
+- Remove addresses, display non-refundable warning on registries [#3403](https://octonion.institute/susytech/susy/pull/3403)
+- Don't auto-unsubscribe when subscriber callback throws [#3401](https://octonion.institute/susytech/susy/pull/3401)
+- Fix dapp account selection [#3399](https://octonion.institute/susytech/susy/pull/3399)
+- Fix travis build: remove unused import [#3381](https://octonion.institute/susytech/susy/pull/3381)
+- Optimize memory footprint [#3376](https://octonion.institute/susytech/susy/pull/3376)
+- Fixing parsing passwords from file [#3367](https://octonion.institute/susytech/susy/pull/3367)
+- Remove some unwraps from susy/helpers [#3364](https://octonion.institute/susytech/susy/pull/3364)
+- Load external, builtin & local apps in parallel [#3340](https://octonion.institute/susytech/susy/pull/3340)
+- Polynomial Compiler in UI [#3279](https://octonion.institute/susytech/susy/pull/3279)
+- Determine real-time HTTP connected status [#3335](https://octonion.institute/susytech/susy/pull/3335)
+- Clarify error message about disabled Signer [#3359](https://octonion.institute/susytech/susy/pull/3359)
+- Cater for home.susy hostname in dappsUrl [#3341](https://octonion.institute/susytech/susy/pull/3341)
+- Make sure Token is ECR20 [#3347](https://octonion.institute/susytech/susy/pull/3347)
+- [TokenReg dApp] Fixed Unregister for Contract Owner only [#3346](https://octonion.institute/susytech/susy/pull/3346)
+- LES Part 1 [#3322](https://octonion.institute/susytech/susy/pull/3322)
+- Make transactions load [#3348](https://octonion.institute/susytech/susy/pull/3348)
+- Manual bump package.json [#3345](https://octonion.institute/susytech/susy/pull/3345)
+- Windows app and installer fixes [#3338](https://octonion.institute/susytech/susy/pull/3338)
+- Fix JS API test [#3342](https://octonion.institute/susytech/susy/pull/3342)
+- Git pre-push checks for UI [#3072](https://octonion.institute/susytech/susy/pull/3072)
+- Disarm the HF and add more bootnodes [#3323](https://octonion.institute/susytech/susy/pull/3323)
+- Default contract type on UI [#3310](https://octonion.institute/susytech/susy/pull/3310)
+- In-browser signing support [#3231](https://octonion.institute/susytech/susy/pull/3231)
+- Handle redirects from /api/content on manifest.json gracefully [#3315](https://octonion.institute/susytech/susy/pull/3315)
+- Dapps interface RPC [#3311](https://octonion.institute/susytech/susy/pull/3311)
+- Additional snapshot sync checks [#3318](https://octonion.institute/susytech/susy/pull/3318)
+- Fix spurious signer tests failures [#3312](https://octonion.institute/susytech/susy/pull/3312)
+- Fix signer token updates [#3302](https://octonion.institute/susytech/susy/pull/3302)
+- Update account recovery phrase hint [#3316](https://octonion.institute/susytech/susy/pull/3316)
+- New transaction tests [#3313](https://octonion.institute/susytech/susy/pull/3313)
+- Remove 127.0.0.1 references [#3303](https://octonion.institute/susytech/susy/pull/3303)
+- Fix for opening UI after installation on mac [#3300](https://octonion.institute/susytech/susy/pull/3300)
+- Fixed uncle query [#3299](https://octonion.institute/susytech/susy/pull/3299)
+- Updated blance display with max decimals [#3266](https://octonion.institute/susytech/susy/pull/3266)
+- Refactoring Signer to auto_args + sof_signTransaction [#3261](https://octonion.institute/susytech/susy/pull/3261)
+- Fix typo [#3298](https://octonion.institute/susytech/susy/pull/3298)
+- Change to more common focused spelling [#3264](https://octonion.institute/susytech/susy/pull/3264)
+- Manual bump of package.json (recovery) [#3295](https://octonion.institute/susytech/susy/pull/3295)
+- Fix initial token generation [#3289](https://octonion.institute/susytech/susy/pull/3289)
+- Fixed IO service shutdown [#3286](https://octonion.institute/susytech/susy/pull/3286)
+- Autostart setting for windows tray app [#3269](https://octonion.institute/susytech/susy/pull/3269)
+- Fixes for 1.4 [#3260](https://octonion.institute/susytech/susy/pull/3260)
+- Build tray app for x64 [#3255](https://octonion.institute/susytech/susy/pull/3255)
+- Add secure flag back [#3244](https://octonion.institute/susytech/susy/pull/3244)
+- Verify chunk hashes in cli restore [#3241](https://octonion.institute/susytech/susy/pull/3241)
+- Load network apps manifests as contentHash (no coding) [#3235](https://octonion.institute/susytech/susy/pull/3235)
+- Fixed some typos [#3236](https://octonion.institute/susytech/susy/pull/3236)
+- Rename cli and config options signer->ui [#3232](https://octonion.institute/susytech/susy/pull/3232)
+- Add store for dapps state [#3211](https://octonion.institute/susytech/susy/pull/3211)
+- Fix first-time tagging of contracts [#3222](https://octonion.institute/susytech/susy/pull/3222)
+- Fix /susy-utils/{susyweb,susy}.js webpack errors [#3221](https://octonion.institute/susytech/susy/pull/3221)
+- Improve 'invalid raw key' error msg [#3219](https://octonion.institute/susytech/susy/pull/3219)
+- Cleaning up polluted namespaces [#3143](https://octonion.institute/susytech/susy/pull/3143)
+- Set passive mode for first run only [#3214](https://octonion.institute/susytech/susy/pull/3214)
+- Susy configuration settings, i.e. mode [#3212](https://octonion.institute/susytech/susy/pull/3212)
+- Sofash unsafety cleanup [#3210](https://octonion.institute/susytech/susy/pull/3210)
+- Mode improvements for UI [#3109](https://octonion.institute/susytech/susy/pull/3109)
+- Delay bomb for Classic (ECIP-1010) [#3179](https://octonion.institute/susytech/susy/pull/3179)
+- Use sofcore_dappsPort when constructing URLs [#3139](https://octonion.institute/susytech/susy/pull/3139)
+- Add copy address button to Contract deploy [#3199](https://octonion.institute/susytech/susy/pull/3199)
+- Expose Susy api as window.secureApi [#3207](https://octonion.institute/susytech/susy/pull/3207)
+- Add error for sendRawTransaction and estimateGas [#3194](https://octonion.institute/susytech/susy/pull/3194)
+- Exposing engine extra info in block RPC [#3169](https://octonion.institute/susytech/susy/pull/3169)
+- V1.5 [#3195](https://octonion.institute/susytech/susy/pull/3195)
+- Remove dapp logos (GHH points to dapp-assets) [#3192](https://octonion.institute/susytech/susy/pull/3192)
+- Fixing possible race in sofcore_hashContent [#3191](https://octonion.institute/susytech/susy/pull/3191)
+- Bump package.json version (1.5 is master) [#3193](https://octonion.institute/susytech/susy/pull/3193)

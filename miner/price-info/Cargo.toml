@@ -1,0 +1,18 @@
+[package]
+description = "Fetch current SOF price"
+homepage = "http://superstring.io"
+license = "GPL-3.0"
+name = "price-info"
+version = "1.12.0"
+authors = ["Susytech <admin@superstring.ch>", "Paritytech <admin@parity.io>"]
+
+[dependencies]
+fetch = { path = "../../util/fetch" }
+futures = {version = "0.1",registry="susytech"}
+susy-runtime = { path = "../../util/runtime" }
+log = {version="0.4",registry="susytech"}
+serde_json = {version = "1.0",registry="susytech"}
+
+[dev-dependencies]
+parking_lot = {version = "0.7",registry="susytech"}
+fake-fetch = { path = "../../util/fake-fetch" }

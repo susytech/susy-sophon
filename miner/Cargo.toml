@@ -1,0 +1,43 @@
+[package]
+description = "Susy Miner interface."
+name = "sofcore-miner"
+homepage = "http://superstring.io"
+license = "GPL-3.0"
+version = "1.12.0"
+authors = ["Susytech <admin@superstring.ch>", "Paritytech <admin@parity.io>"]
+
+[dependencies]
+# Only work_notify, consider a separate crate
+sofash = { path = "../sofash", optional = true }
+fetch = { path = "../util/fetch", optional = true }
+hyper = { version = "0.12", registry="susytech",optional = true }
+url = { version = "1", registry="susytech", optional = true }
+
+# Miner
+ansi_term = {version = "0.10",registry="susytech"}
+common-types = { path = "../sofcore/types" }
+error-chain = {version="0.12",registry="susytech"}
+sofabi = {version="6.0",registry="susytech"}
+sofabi-derive = {version="6.0",registry="susytech"}
+sofabi-contract = {version="6.0",registry="susytech"}
+sofcore-call-contract = { path = "../sofcore/call-contract" }
+sophon-types = {version="0.4",registry="susytech"}
+futures = {version = "0.1",registry="susytech"}
+heapsize = {version="0.4",registry="susytech"}
+keccak-hash = {version="0.1",registry="susytech"}
+linked-hash-map = {version="0.5",registry="susytech"}
+log = {version="0.4",registry="susytech"}
+susy-runtime = { path = "../util/runtime" }
+parking_lot = {version = "0.7",registry="susytech"}
+price-info = { path = "./price-info", optional = true }
+srlp = { version = "0.3.0", registry="susytech", features = ["sophon"] }
+trace-time = {version="0.1",registry="susytech"}
+transaction-pool = {version="2.0",registry="susytech"}
+
+[dev-dependencies]
+env_logger = {version="0.5",registry="susytech"}
+sofkey = { path = "../accounts/sofkey" }
+rustc-hex = {version = "1.0",registry="susytech"}
+
+[features]
+work-notify = ["sofash", "fetch", "hyper", "url"]

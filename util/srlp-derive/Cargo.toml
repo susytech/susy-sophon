@@ -1,0 +1,16 @@
+[package]
+name = "srlp_derive"
+version = "0.1.0"
+authors = ["debris <marek.kotewicz@gmail.com>"]
+
+[lib]
+name = "srlp_derive"
+proc-macro = true
+
+[dependencies]
+syn = {version="0.15",registry="susytech"}
+quote = {version="0.6",registry="susytech"}
+proc-macro2 = {version="0.4",registry="susytech"}
+
+[dev-dependencies]
+srlp = { version = "0.3.0", registry="susytech", features = ["sophon"] }

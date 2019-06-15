@@ -1,0 +1,34 @@
+# NOTE This file is used by the auto-updater service.
+# Make sure to update the service if it's moved or the structure is changed.
+[package]
+name = "susy-version"
+# NOTE: this value is used for Susy Sophon version string (via env CARGO_PKG_VERSION)
+version = "2.4.6"
+authors = ["Susytech <admin@superstring.ch>", "Paritytech <admin@parity.io>"]
+build = "build.rs"
+
+[package.metadata]
+# This versions track. Should be changed to `stable` or `beta` when on respective branches.
+# Used by auto-updater and for Susy version string.
+track = "stable"
+
+# Network specific settings, used ONLY by auto-updater.
+# Latest supported fork blocks.
+# Indicates a critical release in this track (i.e. consensus issue).
+[package.metadata.networks]
+foundation = { forkBlock = 7280000, critical = false }
+ropsten = { forkBlock = 4939394, critical = false }
+kovan = { forkBlock = 10255201, critical = false }
+
+[dependencies]
+susy-bytes = {version="0.1",registry="susytech"}
+srlp = { version = "0.3.0", registry="susytech", features = ["sophon"] }
+target_info = {version="0.1",registry="susytech"}
+
+[build-dependencies]
+vergen = {version="0.1",registry="susytech"}
+rustc_version = {version="0.2",registry="susytech"}
+toml = {version = "0.4",registry="susytech"}
+
+[features]
+final = []

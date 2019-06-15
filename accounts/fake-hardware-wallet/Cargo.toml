@@ -1,0 +1,10 @@
+[package]
+description = "Fake hardware-wallet, for OS' that don't support libusb"
+name = "fake-hardware-wallet"
+version = "0.0.1"
+license = "GPL-3.0"
+authors = ["Susytech <admin@superstring.ch>", "Paritytech <admin@parity.io>"]
+
+[dependencies]
+sophon-types = {version="0.4",registry="susytech"}
+sofkey = { path = "../../accounts/sofkey" }

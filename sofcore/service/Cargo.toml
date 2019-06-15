@@ -1,0 +1,23 @@
+[package]
+name = "sofcore-service"
+version = "0.1.0"
+authors = ["Susytech <admin@superstring.ch>", "Paritytech <admin@parity.io>"]
+
+[dependencies]
+ansi_term = {version = "0.10",registry="susytech"}
+error-chain = { version = "0.12", registry="susytech", default-features = false }
+sofcore = { path = ".." }
+sofcore-blockchain = { path = "../blockchain" }
+sofcore-io = { path = "../../util/io" }
+sofcore-private-tx = { path = "../private-tx" }
+sofcore-sync = { path = "../sync" }
+sophon-types = {version="0.4",registry="susytech"}
+susykv = {version="0.1",registry="susytech"}
+log = {version="0.4",registry="susytech"}
+trace-time = {version="0.1",registry="susytech"}
+
+[dev-dependencies]
+sofcore-db = { path = "../db" }
+sofcore = { path = "..", features = ["test-helpers"] }
+tempdir = {version="0.3",registry="susytech"}
+susykv-rocksdb = {version="0.1.3",registry="susytech"}

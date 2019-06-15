@@ -1,0 +1,8 @@
+[Desktop Entry]
+Type=Application
+Encoding=UTF-8
+Name=Susy Sophon
+Comment=The fastest and most advanced Sophon client.
+Exec=susy
+Icon=/usr/share/pixmaps/icon.png
+Terminal=true

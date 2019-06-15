@@ -1,0 +1,52 @@
+[package]
+description = "Susy Light Client Implementation"
+homepage = "http://superstring.io"
+license = "GPL-3.0"
+name = "sofcore-light"
+version = "1.12.0"
+authors = ["Susytech <admin@superstring.ch>", "Paritytech <admin@parity.io>"]
+
+[dependencies]
+log = {version="0.4",registry="susytech"}
+susy-bytes = {version="0.1",registry="susytech"}
+common-types = { path = "../types" }
+sofcore = { path = ".."}
+sofcore-db = { path = "../db" }
+sofcore-blockchain = { path = "../blockchain" }
+sophon-types = {version="0.4",registry="susytech"}
+memory-db = {version="0.11.0",registry="susytech"}
+trie-db = {version="0.11.0",registry="susytech"}
+susy-patricia-trie-sophon = { path = "../../util/susy-patricia-trie-sophon" }
+sofcore-network = { path = "../../util/network" }
+sofcore-io = { path = "../../util/io" }
+hash-db = {version="0.11.0",registry="susytech"}
+heapsize = {version="0.4",registry="susytech"}
+vm = { path = "../vm" }
+fastmap = { path = "../../util/fastmap" }
+failsafe = { version = "0.3.0", registry="susytech", default-features = false, features = ["parking_lot_mutex"] }
+srlp = { version = "0.3.0", registry="susytech", features = ["sophon"] }
+srlp_derive = { path = "../../util/srlp-derive" }
+smallvec = {version="0.6",registry="susytech"}
+futures = {version = "0.1",registry="susytech"}
+rand = {version="0.4",registry="susytech"}
+itertools = {version="0.5",registry="susytech"}
+bincode = {version="0.8.0",registry="susytech"}
+serde = {version = "1.0",registry="susytech"}
+serde_derive = {version = "1.0",registry="susytech"}
+parking_lot = {version = "0.7",registry="susytech"}
+stats = { path = "../../util/stats" }
+keccak-hash = {version="0.1",registry="susytech"}
+keccak-hasher = { path = "../../util/keccak-hasher" }
+triehash-sophon = { version = "0.2", registry="susytech", path = "../../util/triehash-sophon" }
+susykv = {version="0.1",registry="susytech"}
+memory-cache = { path = "../../util/memory-cache" }
+error-chain = { version = "0.12", registry="susytech", default-features = false }
+journaldb = { path = "../../util/journaldb" }
+
+[dev-dependencies]
+sofcore = { path = "..", features = ["test-helpers"] }
+susykv-memorydb = {version="0.1",registry="susytech"}
+tempdir = {version="0.3",registry="susytech"}
+
+[features]
+default = []

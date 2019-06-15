@@ -1,0 +1,17 @@
+[package]
+description = "Sofcore DB access utilities"
+homepage = "http://superstring.io"
+license = "GPL-3.0"
+name = "sofcore-db"
+version = "0.1.0"
+authors = ["Susytech <admin@superstring.ch>", "Paritytech <admin@parity.io>"]
+edition = "2018"
+
+[dependencies]
+common-types = { path = "../types" }
+sophon-types = {version="0.4",registry="susytech"}
+heapsize = {version="0.4",registry="susytech"}
+susykv = {version="0.1",registry="susytech"}
+parking_lot = {version = "0.7",registry="susytech"}
+srlp = { version = "0.3.0", registry="susytech", features = ["sophon"] }
+srlp_derive = { path = "../../util/srlp-derive" }

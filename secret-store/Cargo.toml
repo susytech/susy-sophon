@@ -1,0 +1,47 @@
+[package]
+description = "Sofcore Secret Store"
+name = "sofcore-secretstore"
+version = "1.0.0"
+license = "GPL-3.0"
+authors = ["Susytech <admin@superstring.ch>", "Paritytech <admin@parity.io>"]
+
+[dependencies]
+byteorder = {version="1.0", registry="susytech"}
+common-types = { path = "../sofcore/types" }
+sofabi = {version="6.0",registry="susytech"}
+sofabi-contract = {version="6.0",registry="susytech"}
+sofabi-derive = {version="6.0",registry="susytech"}
+sofcore = { path = "../sofcore" }
+sofcore-accounts = { path = "../accounts", optional = true}
+sofcore-call-contract = { path = "../sofcore/call-contract" }
+sofcore-sync = { path = "../sofcore/sync" }
+sophon-types = {version="0.4",registry="susytech"}
+sofkey = { path = "../accounts/sofkey" }
+futures = {version = "0.1",registry="susytech"}
+hyper = { version = "0.12", registry="susytech",default-features = false }
+keccak-hash = {version="0.1",registry="susytech"}
+susykv = {version="0.1",registry="susytech"}
+lazy_static = {version="1.0",registry="susytech"}
+log = {version="0.4",registry="susytech"}
+susy-bytes = {version="0.1",registry="susytech"}
+susy-crypto = {version="0.3",registry="susytech"}
+susy-runtime = { path = "../util/runtime" }
+parking_lot = {version = "0.7",registry="susytech"}
+rustc-hex = {version = "1.0",registry="susytech"}
+serde = {version = "1.0",registry="susytech"}
+serde_derive = {version = "1.0",registry="susytech"}
+serde_json = {version = "1.0",registry="susytech"}
+tiny-keccak = {version="1.4",registry="susytech"}
+tokio = {version="~0.1.11",registry="susytech"}
+tokio-io = {version="0.1",registry="susytech"}
+tokio-service = {version="0.1",registry="susytech"}
+url = {version="1.0",registry="susytech"}
+
+[dev-dependencies]
+env_logger = {version="0.5",registry="susytech"}
+sofcore = { path = "../sofcore", features = ["test-helpers"] }
+tempdir = {version="0.3",registry="susytech"}
+susykv-rocksdb = {version="0.1.3",registry="susytech"}
+
+[features]
+accounts = ["sofcore-accounts"]

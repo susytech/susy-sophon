@@ -1,0 +1,14 @@
+[package]
+name = "blooms-db"
+version = "0.1.0"
+license = "GPL-3.0"
+authors = ["Susytech <admin@superstring.ch>", "Paritytech <admin@parity.io>"]
+
+[dependencies]
+byteorder = {version="1.2",registry="susytech"}
+sofbloom = {version="0.5",registry="susytech"}
+parking_lot = {version = "0.7",registry="susytech"}
+tiny-keccak = {version="1.4",registry="susytech"}
+
+[dev-dependencies]
+tempdir = {version="0.3",registry="susytech"}

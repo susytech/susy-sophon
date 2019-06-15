@@ -1,0 +1,146 @@
+[package]
+description = "Susy Sophon client"
+name = "susy-sophon"
+# NOTE Make sure to update util/version/Cargo.toml as well
+version = "2.4.6"
+license = "GPL-3.0"
+authors = ["Susytech <admin@superstring.ch>", "Paritytech <admin@parity.io>"]
+
+[dependencies]
+blooms-db = { path = "util/blooms-db" }
+log = {version="0.4",registry="susytech"}
+rustc-hex = {version = "1.0",registry="susytech"}
+docopt = {version = "1.0",registry="susytech"}
+clap = {version = "2",registry="susytech"}
+term_size = {version = "0.3",registry="susytech"}
+textwrap = {version = "0.9",registry="susytech"}
+num_cpus = {version = "1.2",registry="susytech"}
+number_prefix = {version = "0.2",registry="susytech"}
+rpassword = {version = "1.0",registry="susytech"}
+semver = {version = "0.9",registry="susytech"}
+ansi_term = {version = "0.10",registry="susytech"}
+parking_lot = {version = "0.7",registry="susytech"}
+regex = {version = "1.0",registry="susytech"}
+atty = {version = "0.2.8",registry="susytech"}
+toml = {version = "0.4",registry="susytech"}
+serde = {version = "1.0",registry="susytech"}
+serde_json = {version = "1.0",registry="susytech"}
+serde_derive = {version = "1.0",registry="susytech"}
+futures = {version = "0.1",registry="susytech"}
+fdlimit = {version = "0.1",registry="susytech"}
+ctrlc = { git = "https://octonion.institute/susytech/rust-ctrlc.git" }
+susy-jsonrpc-core = {version="10.0.1",registry="susytech"}
+susy-bytes = {version="0.1",registry="susytech"}
+common-types = { path = "sofcore/types" }
+sofcore = { path = "sofcore", features = ["susy"] }
+sofcore-accounts = { path = "accounts", optional = true }
+sofcore-blockchain = { path = "sofcore/blockchain" }
+sofcore-call-contract = { path = "sofcore/call-contract"}
+sofcore-db = { path = "sofcore/db" }
+sofcore-io = { path = "util/io" }
+sofcore-light = { path = "sofcore/light" }
+sofcore-logger = { path = "susy/logger" }
+sofcore-miner = { path = "miner" }
+sofcore-network = { path = "util/network" }
+sofcore-private-tx = { path = "sofcore/private-tx" }
+sofcore-service = { path = "sofcore/service" }
+sofcore-sync = { path = "sofcore/sync" }
+sophon-types = {version="0.4",registry="susytech"}
+sofkey = { path = "accounts/sofkey" }
+sofstore = { path = "accounts/sofstore" }
+node-filter = { path = "sofcore/node-filter" }
+srlp = { version = "0.3.0", registry="susytech", features = ["sophon"] }
+cli-signer= { path = "cli-signer" }
+susy-daemonize = {version="0.3",registry="susytech"}
+susy-hash-fetch = { path = "updater/hash-fetch" }
+susy-ipfs-api = { path = "ipfs" }
+susy-local-store = { path = "miner/local-store" }
+susy-runtime = { path = "util/runtime" }
+susy-rpc = { path = "rpc" }
+susy-updater = { path = "updater" }
+susy-version = { path = "util/version" }
+susy-whisper = { path = "whisper" }
+susy-path = {version="0.1",registry="susytech"}
+dir = { path = "util/dir" }
+panic_hook = { path = "util/panic-hook" }
+keccak-hash = {version="0.1",registry="susytech"}
+migration-rocksdb = { path = "util/migration-rocksdb" }
+susykv = {version="0.1",registry="susytech"}
+susykv-rocksdb = {version="0.1.3",registry="susytech"}
+journaldb = { path = "util/journaldb" }
+
+sofcore-secretstore = { path = "secret-store", optional = true }
+
+registrar = { path = "util/registrar" }
+
+[build-dependencies]
+rustc_version = {version="0.2",registry="susytech"}
+
+[dev-dependencies]
+pretty_assertions = {version="0.1",registry="susytech"}
+ipnetwork = {version="0.12.6",registry="susytech"}
+tempdir = {version="0.3",registry="susytech"}
+fake-fetch = { path = "util/fake-fetch" }
+lazy_static = {version="1.2.0",registry="susytech"}
+
+[target.'cfg(windows)'.dependencies]
+winapi = { version = "0.3.4", registry="susytech", features = ["winsock2", "winuser", "shellapi"] }
+
+[features]
+default = ["accounts"]
+accounts = ["sofcore-accounts", "susy-rpc/accounts"]
+miner-debug = ["sofcore/miner-debug"]
+json-tests = ["sofcore/json-tests"]
+ci-skip-tests = ["sofcore/ci-skip-tests"]
+test-heavy = ["sofcore/test-heavy"]
+svm-debug = ["sofcore/svm-debug"]
+svm-debug-tests = ["sofcore/svm-debug-tests"]
+slow-blocks = ["sofcore/slow-blocks"]
+secretstore = ["sofcore-secretstore", "sofcore-secretstore/accounts"]
+final = ["susy-version/final"]
+deadlock_detection = ["parking_lot/deadlock_detection"]
+# to create a memory profile (requires nightly rust), use e.g.
+# `heaptrack /path/to/susy <susy params>`,
+# to visualize a memory profile, use `heaptrack_gui`
+# or
+# `valgrind --tool=massif /path/to/susy <susy params>`
+# and `massif-visualizer` for visualization
+memory_profiling = []
+# hardcode version number 1.3.7 of susy to force an update
+# in order to manually test that susy fall-over to the local version
+# in case of invalid or deprecated command line arguments are entered
+test-updater = ["susy-updater/test-updater"]
+
+[lib]
+path = "susy/lib.rs"
+
+[[bin]]
+path = "susy/main.rs"
+name = "susy"
+
+[profile.dev]
+
+[profile.release]
+debug = false
+
+[workspace]
+# This should only list projects that are not
+# in the dependency tree in any other way
+# (i.e. pretty much only standalone CLI tools)
+members = [
+	"accounts/sofkey/cli",
+	"accounts/sofstore/cli",
+	"chainspec",
+	"sofcore/wasm/run",
+	"svmbin",
+	"susy-clib",
+	"whisper/cli",
+	"util/triehash-sophon",
+	"util/keccak-hasher",
+	"util/susy-patricia-trie-sophon",
+	"util/fastmap",
+	"util/time-utils"
+]
+
+[patch.crates-io]
+heapsize = { git = "https://octonion.institute/susy-rust/heapsize.git" }

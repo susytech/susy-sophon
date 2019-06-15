@@ -1,0 +1,8 @@
+[package]
+name = "chainspec"
+version = "0.1.0"
+authors = ["Marek Kotewicz <marek@superstring.io>"]
+
+[dependencies]
+sofjson = { path = "../json" }
+serde_json = {version = "1.0",registry="susytech"}

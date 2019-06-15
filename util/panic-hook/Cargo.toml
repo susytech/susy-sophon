@@ -1,0 +1,10 @@
+[package]
+description = "Susy custom panic hook"
+homepage = "http://superstring.io"
+license = "GPL-3.0"
+name = "panic_hook"
+version = "0.1.0"
+authors = ["Susytech <admin@superstring.ch>", "Paritytech <admin@parity.io>"]
+
+[dependencies]
+backtrace = {version="0.3.2", registry="susytech"}

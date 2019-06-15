@@ -1,0 +1,22 @@
+[package]
+description = "C bindings for the Susy Sophon client"
+name = "susy-clib"
+version = "1.12.0"
+license = "GPL-3.0"
+authors = ["Susytech <admin@superstring.ch>", "Paritytech <admin@parity.io>"]
+
+[lib]
+name = "susy"
+crate-type = ["cdylib", "staticlib"]
+
+[dependencies]
+futures = {version="0.1.6",registry="susytech"}
+jni = { version = "0.10.1", registry="susytech", optional = true }
+panic_hook = { path = "../util/panic-hook" }
+susy-sophon = { path = "../", default-features = false }
+tokio = {version="0.1.11",registry="susytech"}
+tokio-current-thread = {version="0.1.3",registry="susytech"}
+
+[features]
+default = []
+final = ["susy-sophon/final"]

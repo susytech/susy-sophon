@@ -1,0 +1,19 @@
+[package]
+description = "Sofcore stratum lib"
+name = "sofcore-stratum"
+version = "1.12.0"
+license = "GPL-3.0"
+authors = ["Susytech <admin@superstring.ch>", "Paritytech <admin@parity.io>"]
+
+[dependencies]
+sophon-types = {version="0.4",registry="susytech"}
+keccak-hash = {version="0.1",registry="susytech"}
+susy-jsonrpc-core = {version="10.0.1",registry="susytech"}
+susy-jsonrpc-tcp-server = {version="10.0.1",registry="susytech"}
+log = {version="0.4",registry="susytech"}
+parking_lot = {version = "0.7",registry="susytech"}
+
+[dev-dependencies]
+env_logger = {version="0.5",registry="susytech"}
+tokio = {version="0.1",registry="susytech"}
+tokio-io = {version="0.1",registry="susytech"}

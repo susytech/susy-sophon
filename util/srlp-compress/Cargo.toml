@@ -1,0 +1,9 @@
+[package]
+name = "srlp_compress"
+version = "0.1.0"
+authors = ["Susytech <admin@superstring.ch>", "Paritytech <admin@parity.io>"]
+
+[dependencies]
+srlp = { version = "0.3.0", registry="susytech", features = ["sophon"] }
+elastic-array = {version="0.10",registry="susytech"}
+lazy_static = {version="1.0",registry="susytech"}

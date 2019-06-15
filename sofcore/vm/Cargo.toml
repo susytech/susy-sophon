@@ -1,0 +1,15 @@
+[package]
+name = "vm"
+version = "0.1.0"
+authors = ["Susytech <admin@superstring.ch>", "Paritytech <admin@parity.io>"]
+
+[dependencies]
+byteorder = {version="1.0", registry="susytech"}
+susy-bytes = {version="0.1",registry="susytech"}
+sophon-types = {version="0.4",registry="susytech"}
+trie-db = {version="0.11.0",registry="susytech"}
+susy-patricia-trie-sophon = { path = "../../util/susy-patricia-trie-sophon" }
+log = {version="0.4",registry="susytech"}
+sofjson = { path = "../../json" }
+srlp = { version = "0.3.0", registry="susytech", features = ["sophon"] }
+keccak-hash = {version="0.1",registry="susytech"}

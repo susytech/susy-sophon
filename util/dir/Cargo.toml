@@ -1,0 +1,11 @@
+[package]
+name = "dir"
+version = "0.1.2"
+authors = ["Susytech <admin@superstring.ch>", "Paritytech <admin@parity.io>"]
+license = "GPL3"
+
+[dependencies]
+sophon-types = {version="0.4",registry="susytech"}
+journaldb = { path = "../journaldb" }
+app_dirs = { git = "https://octonion.institute/susytech/app-dirs-rs" }
+home = {version="0.3",registry="susytech"}

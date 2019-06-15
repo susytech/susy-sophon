@@ -1,0 +1,42 @@
+[package]
+description = "Sofcore blockchain sync"
+name = "sofcore-sync"
+version = "1.12.0"
+license = "GPL-3.0"
+authors = ["Susytech <admin@superstring.ch>", "Paritytech <admin@parity.io>"]
+
+[lib]
+
+[dependencies]
+common-types = { path = "../types" }
+enum_primitive = {version="0.1.1",registry="susytech"}
+sofcore = { path = ".." }
+sofcore-io = { path = "../../util/io" }
+sofcore-light = { path = "../light" }
+sofcore-network = { path = "../../util/network" }
+sofcore-network-devp2p = { path = "../../util/network-devp2p" }
+sophon-types = {version="0.4",registry="susytech"}
+sofkey = { path = "../../accounts/sofkey" }
+sofstore = { path = "../../accounts/sofstore" }
+fastmap = { path = "../../util/fastmap" }
+hash-db = {version="0.11.0",registry="susytech"}
+heapsize = {version="0.4",registry="susytech"}
+keccak-hash = {version="0.1",registry="susytech"}
+keccak-hasher = { path = "../../util/keccak-hasher" }
+susykv = {version="0.1",registry="susytech"}
+log = {version="0.4",registry="susytech"}
+macros = { path = "../../util/macros" }
+susy-bytes = {version="0.1",registry="susytech"}
+parking_lot = {version = "0.7",registry="susytech"}
+rand = {version="0.4",registry="susytech"}
+srlp = { version = "0.3.0", registry="susytech", features = ["sophon"] }
+trace-time = {version="0.1",registry="susytech"}
+triehash-sophon = {version = "0.2", registry="susytech", path = "../../util/triehash-sophon" }
+
+[dev-dependencies]
+env_logger = {version="0.5",registry="susytech"}
+sofcore = { path = "..", features = ["test-helpers"] }
+sofcore-io = { path = "../../util/io", features = ["mio"] }
+sofcore-private-tx = { path = "../private-tx" }
+susykv-memorydb = {version="0.1",registry="susytech"}
+rustc-hex = {version = "1.0",registry="susytech"}

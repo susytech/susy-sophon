@@ -1,0 +1,17 @@
+[package]
+name = "wasm"
+version = "0.1.0"
+authors = ["Susytech <admin@superstring.ch>", "Paritytech <admin@parity.io>"]
+
+[dependencies]
+byteorder = {version="1.0", registry="susytech"}
+sophon-types = {version="0.4",registry="susytech"}
+log = {version="0.4",registry="susytech"}
+swasm = {version="0.31",registry="susytech"}
+libc = {version="0.2",registry="susytech"}
+swasm-utils = {version="0.6.1",registry="susytech"}
+vm = { path = "../vm" }
+swasmi = {version="0.3.0",registry="susytech"}
+
+[dev-dependencies]
+env_logger = {version="0.5",registry="susytech"}

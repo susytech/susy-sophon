@@ -1,0 +1,29 @@
+[package]
+name = "svm"
+version = "0.1.0"
+authors = ["Susytech <admin@superstring.ch>", "Paritytech <admin@parity.io>"]
+
+[dependencies]
+bit-set = {version="0.4",registry="susytech"}
+susy-bytes = {version="0.1",registry="susytech"}
+sophon-types = {version="0.4",registry="susytech"}
+heapsize = {version="0.4",registry="susytech"}
+lazy_static = {version="1.0",registry="susytech"}
+log = {version="0.4",registry="susytech"}
+vm = { path = "../vm" }
+keccak-hash = {version="0.1",registry="susytech"}
+parking_lot = {version = "0.7",registry="susytech"}
+memory-cache = { path = "../../util/memory-cache" }
+num-bigint = {version="0.2",registry="susytech"}
+
+[dev-dependencies]
+rustc-hex = {version = "1.0",registry="susytech"}
+criterion = {version="0.2",registry="susytech"}
+
+[features]
+svm-debug = []
+svm-debug-tests = ["svm-debug"]
+
+[[bench]]
+name = "basic"
+harness = false

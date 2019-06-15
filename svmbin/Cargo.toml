@@ -1,0 +1,32 @@
+[package]
+name = "svmbin"
+description = "Susy's SVM implementation"
+version = "0.1.0"
+authors = ["Susytech <admin@superstring.ch>", "Paritytech <admin@parity.io>"]
+
+[[bin]]
+name = "susy-svm"
+path = "./src/main.rs"
+
+[dependencies]
+common-types = { path = "../sofcore/types" }
+docopt = {version = "1.0",registry="susytech"}
+env_logger = {version="0.5",registry="susytech"}
+sofcore = { path = "../sofcore", features = ["test-helpers", "json-tests", "to-pod-full"] }
+sophon-types = {version="0.4",registry="susytech"}
+sofjson = { path = "../json" }
+svm = { path = "../sofcore/svm" }
+panic_hook = { path = "../util/panic-hook" }
+susy-bytes = {version="0.1",registry="susytech"}
+rustc-hex = {version = "1.0",registry="susytech"}
+serde = {version = "1.0",registry="susytech"}
+serde_derive = {version = "1.0",registry="susytech"}
+serde_json = {version = "1.0",registry="susytech"}
+vm = { path = "../sofcore/vm" }
+
+[dev-dependencies]
+pretty_assertions = {version="0.1",registry="susytech"}
+tempdir = {version="0.3",registry="susytech"}
+
+[features]
+svm-debug = ["sofcore/svm-debug-tests"]
